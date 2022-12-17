@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# Habit Tracker
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+It's a browser-based habit tracker app, it provides feedbacks to users about good habits they want to keep and monitor, it makes charts and statistics to show progresses and gives badges when goals are acheived.
+Users can easily add and track new habits or customise the existing ones.
+Users are constantly informed through a real time notification system about actions to take to keep in line with their goals. 
 
 ## Available Scripts
 
