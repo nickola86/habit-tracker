@@ -6,11 +6,14 @@ import GlobalStyles from '@mui/material/GlobalStyles';
 import { Theme } from '@mui/material/styles';
 import Dashboard from './views/Dashboard';
 import Login from './views/Login';
+import Logout from './views/Logout';
 import Habit from './views/Habit';
 import Preferences from './views/Preferences';
 import Profile from './views/Profile';
 import Settings from './views/Settings';
 import reportWebVitals from './reportWebVitals';
+import { RecoilRoot } from 'recoil';
+import './i18n/i18n';
 
 import {
   createBrowserRouter,
@@ -26,6 +29,10 @@ const routes: Array<RouteObject> = [
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/logout",
+    element: <Logout />
   },
   {
     path: "/habit",
@@ -52,13 +59,15 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-      <CssBaseline />
-      <GlobalStyles
-        styles={(theme) => ({
-          body: { backgroundColor: (theme as Theme).palette.background.paper },
-        })}
-      />
-      <RouterProvider router={router} />
+      <RecoilRoot>
+        <CssBaseline />
+        <GlobalStyles
+          styles={(theme) => ({
+            body: { backgroundColor: (theme as Theme).palette.background.paper },
+          })}
+        />
+        <RouterProvider router={router} />
+      </RecoilRoot>
   </React.StrictMode>
 );
 

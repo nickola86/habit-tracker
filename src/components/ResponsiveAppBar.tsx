@@ -13,26 +13,22 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AccessAlarm from '@mui/icons-material/AccessAlarm';
 import { useNavigate } from "react-router-dom";
-
-interface Route{
-    pageName: string;
-    path: string
-}
-
-const routes:Array<Route> = [{
-    pageName:'Dashboard',
-    path:'/'
-},{
-    pageName:'Login',
-    path:'/login'
-}]
-
-const settings = ['Profile', 'Settings','Logout'];
+import { routes,settings } from '../atoms/routesConfig';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { userState } from '../atoms/userState';
+import { useTranslation } from 'react-i18next';
+import { selectedLanguage, supportedLanguages } from '../atoms/i18n';
 
 function ResponsiveAppBar() {
+  const { t, i18n } = useTranslation();
+  const langs = useRecoilValue(supportedLanguages)
+  const [selLang,setSelectedLanguage] = useRecoilState(selectedLanguage)
+  const {isUserLoggedIn} = useRecoilValue(userState)
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+  const [anchorElLang, setAnchorElLang] = React.useState<null | HTMLElement>(null);
   const navigate = useNavigate();
+  
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -40,22 +36,36 @@ function ResponsiveAppBar() {
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
   };
+  const handleOpenLangMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElLang(event.currentTarget);
+  };
+
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
+  const handleCloseLangMenu = () => {
+    setAnchorElLang(null);
+  };
   const handleCloseNavMenuAndGo = (path: string) => {
     handleCloseNavMenu()
     navigate(path)
   };
 
+  const switchLanguage = (lang: string) => {
+    handleCloseLangMenu()
+    i18n.changeLanguage(lang)
+    setSelectedLanguage(lang)
+  }
+
+  const appRoutes = useRecoilValue(routes).filter(r=>r.requiresAuthentication===isUserLoggedIn)
+  const appSettings = useRecoilValue(settings).filter(r=>r.requiresAuthentication===isUserLoggedIn)
+
   return (
-    <AppBar position="static">
+    <AppBar position="static" style={{ background: '#2E3B55' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AccessAlarm sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -74,7 +84,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            HABIT TRACKER
+            {t('appName')}
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -106,9 +116,9 @@ function ResponsiveAppBar() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {routes.map((route) => (
-                <MenuItem key={route.pageName} onClick={()=>handleCloseNavMenuAndGo(route.path)}>
-                  <Typography textAlign="center">{route.pageName}</Typography>
+              {appRoutes.map((r) => (
+                <MenuItem key={r.pageName} onClick={()=>handleCloseNavMenuAndGo(r.path)}>
+                  <Typography textAlign="center">{r.pageName}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -130,24 +140,54 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            HABIT TRACKER
+            {t('appName')}
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {routes.map((route) => (
+            {appRoutes.map((r) => (
               <Button
-                key={route.pageName}
-                onClick={()=>handleCloseNavMenuAndGo(route.path)}
+                key={r.pageName}
+                onClick={()=>handleCloseNavMenuAndGo(r.path)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {route.pageName}
+                {r.pageName}
               </Button>
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ flexGrow: 0}}>
+            <Tooltip title="Change Language">
+              <IconButton onClick={handleOpenLangMenu} sx={{ p: 0 }}>
+                <Avatar alt={selLang} src={`/static/images/flags/${selLang}.svg`} />
+              </IconButton>
+            </Tooltip>
+            <Menu
+              sx={{ mt: '45px' }}
+              id="menu-appbar"
+              anchorEl={anchorElLang}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorElLang)}
+              onClose={handleCloseLangMenu}
+            >
+              {langs.map((l) => (
+                <MenuItem key={l} onClick={()=>switchLanguage(l)}>
+                  <Avatar alt="Italian" src={`/static/images/flags/${l}.svg`} />
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+
+          {isUserLoggedIn && <Box sx={{ flexGrow: 0 , marginLeft:"1em"}}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Remy Sharp" src="/static/images/avatars/kid.png" />
               </IconButton>
             </Tooltip>
             <Menu
@@ -166,13 +206,13 @@ function ResponsiveAppBar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+              {appSettings.map((s) => (
+                <MenuItem key={s.pageName} onClick={()=>handleCloseNavMenuAndGo(s.path)}>
+                  <Typography textAlign="center">{s.pageName}</Typography>
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
+          </Box>}
         </Toolbar>
       </Container>
     </AppBar>
