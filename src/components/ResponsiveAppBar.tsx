@@ -13,16 +13,14 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AccessAlarm from '@mui/icons-material/AccessAlarm';
 import { useNavigate } from "react-router-dom";
-import { routes,settings } from '../atoms/routesConfig';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { routes, settings } from '../config/menu';
+import { useRecoilValue } from 'recoil';
 import { userState } from '../atoms/userState';
 import { useTranslation } from 'react-i18next';
-import { selectedLanguage, supportedLanguages } from '../atoms/i18n';
 
 function ResponsiveAppBar() {
   const { t, i18n } = useTranslation();
-  const langs = useRecoilValue(supportedLanguages)
-  const [selLang,setSelectedLanguage] = useRecoilState(selectedLanguage)
+  const languages = Object.keys(i18n.services.resourceStore.data);
   const {isUserLoggedIn} = useRecoilValue(userState)
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
@@ -58,11 +56,10 @@ function ResponsiveAppBar() {
   const switchLanguage = (lang: string) => {
     handleCloseLangMenu()
     i18n.changeLanguage(lang)
-    setSelectedLanguage(lang)
   }
 
-  const appRoutes = useRecoilValue(routes).filter(r=>r.requiresAuthentication===isUserLoggedIn)
-  const appSettings = useRecoilValue(settings).filter(r=>r.requiresAuthentication===isUserLoggedIn)
+  const appRoutes = routes.filter(r=>r.requiresAuthentication===isUserLoggedIn)
+  const appSettings = settings.filter(r=>r.requiresAuthentication===isUserLoggedIn)
 
   return (
     <AppBar position="static" style={{ background: '#2E3B55' }}>
@@ -157,7 +154,7 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 0}}>
             <Tooltip title="Change Language">
               <IconButton onClick={handleOpenLangMenu} sx={{ p: 0 }}>
-                <Avatar alt={selLang} src={`/static/images/flags/${selLang}.svg`} />
+                <Avatar alt={i18n.language} src={`/static/images/flags/${i18n.language}.svg`} />
               </IconButton>
             </Tooltip>
             <Menu
@@ -176,7 +173,7 @@ function ResponsiveAppBar() {
               open={Boolean(anchorElLang)}
               onClose={handleCloseLangMenu}
             >
-              {langs.map((l) => (
+              {languages.map((l) => (
                 <MenuItem key={l} onClick={()=>switchLanguage(l)}>
                   <Avatar alt="Italian" src={`/static/images/flags/${l}.svg`} />
                 </MenuItem>

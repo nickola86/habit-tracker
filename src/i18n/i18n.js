@@ -9,8 +9,8 @@ i18n.use(initReactI18next)
     debug: true,
     lng:'it',
     resources:{
+      it,
       en,
-      it,  
     }
   });
 

@@ -1,22 +1,22 @@
+import * as React from 'react';
+import {useState, useEffect} from 'react';
+import { useRecoilState } from 'recoil';
+import { userState } from '../atoms/userState';
+import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import TextField from '@mui/material/TextField';
-import * as React from 'react';
-import {useEffect} from 'react';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import ResponsiveAppBar from '../components/ResponsiveAppBar';
 import '../styles/login.css'
-import { useState } from 'react';
-import { useRecoilState, useSetRecoilState } from 'recoil';
-import { userState } from '../atoms/userState';
-import { useNavigate } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 
 export default function Login() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [user, setUser] = useRecoilState(userState)
@@ -25,7 +25,7 @@ export default function Login() {
 
   useEffect(()=>{
     if(user.isUserLoggedIn) navigate('/')
-  },[user])
+  },[user,navigate])
 
   const doLogin = () => {    
     if(username==='nicola'){
