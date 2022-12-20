@@ -7,7 +7,7 @@ export interface Route{
 
 export interface User{
     id?: number
-	name?: string
+	username?: string
     password?: string,
     isUserLoggedIn?: boolean,
     loginSuccess?: boolean

@@ -14,6 +14,8 @@ import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import ResponsiveAppBar from '../components/ResponsiveAppBar';
 import '../styles/login.css'
+import { useAuthenticationService, LoginRequest, LoginResponse} from '../services/useAuthenticationService';
+import { User } from '../types';
 
 export default function Login() {
   const { t } = useTranslation();
@@ -22,31 +24,21 @@ export default function Login() {
   const [user, setUser] = useRecoilState(userState)
   const navigate = useNavigate()
   const [loginStatus,setLoginStatus] = useState('')
+  const authSvc = useAuthenticationService()
 
   useEffect(()=>{
     if(user.isUserLoggedIn) navigate('/')
   },[user,navigate])
 
   const doLogin = () => {    
-    if(username==='nicola'){
-      setUser({
-        id:1,
-        isUserLoggedIn:true,
-        name: username,
-        password: password
-      })
-    }else{
-      setLoginStatus('fail')
+    const user: User = {username,password}
+    const loginRequest: LoginRequest = {
+      user
     }
-    /*
-    authSvc.login().then((status)=>{
-      if(status.success){
-        )
-      }else{
-        //Login Error
-      }
+    authSvc.login(loginRequest).then((loginResponse: LoginResponse)=>{
+        setUser(loginResponse.user)
+        setLoginStatus(loginResponse.status)
     })
-    */
   }
 
   return (
@@ -55,9 +47,9 @@ export default function Login() {
         <div className='login-box'>
           <Card sx={{ width: 300,height: 300, display:'flex', flexFlow:'column', alignItems:'center', justifyContent:'center'}}>
             <CardContent>
-              <TextField variant='outlined' label='Username' onChange={e=>setUsername(e.target.value)}/>
+              <TextField variant='outlined' label='Username' onChange={e=>setUsername(e.target.value)} onKeyUp={e=>{e.key==='Enter' && doLogin()}}/>
               <br/><br/>
-              <TextField variant='outlined' label='Password' type='password' onChange={e=>setPassword(e.target.value)}/>
+              <TextField variant='outlined' label='Password' type='password' onChange={e=>setPassword(e.target.value)} onKeyUp={e=>{e.key==='Enter' && doLogin()}} />
             </CardContent>
             <CardActions>
               <Button size="small" onClick={doLogin}>{t('logMeIn')}</Button>
@@ -69,8 +61,8 @@ export default function Login() {
             </Typography>
             {
               loginStatus === 'fail' &&
-              <Typography sx={{ fontSize: 12 }} color="text.secondary" gutterBottom>
-              <div style={{marginTop:'1em'}}>{t('loginFailed')}</div>
+              <Typography sx={{ fontSize: 12 }} color="red" gutterBottom>
+                {t('loginFailed')}
             </Typography>
             }
           </Card>
