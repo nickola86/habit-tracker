@@ -62,7 +62,7 @@ function ResponsiveAppBar() {
   const appSettings = settings.filter(r=>r.requiresAuthentication===isUserLoggedIn)
 
   return (
-    <AppBar position="static" style={{ background: '#2E3B55' }}>
+    <AppBar position="static" style={{ background: '#07266d' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AccessAlarm sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -81,7 +81,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            {t('appName')}
+          {t('appName')}
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -137,14 +137,14 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            {t('appName')}
+          {t('appName')}
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {appRoutes.map((r) => (
               <Button
                 key={r.pageName}
                 onClick={()=>handleCloseNavMenuAndGo(r.path)}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'white', display: 'block', marginX:2 }}
               >
                 {r.pageName}
               </Button>
