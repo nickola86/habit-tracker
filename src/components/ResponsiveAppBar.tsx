@@ -151,8 +151,8 @@ function ResponsiveAppBar() {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0}}>
-            <Tooltip title="Change Language">
+          {!isUserLoggedIn && <Box sx={{ flexGrow: 0}}>
+            <Tooltip title={t('changeLanguage')}>
               <IconButton onClick={handleOpenLangMenu} sx={{ p: 0 }}>
                 <Avatar alt={i18n.language} src={`/static/images/flags/${i18n.language}.svg`} />
               </IconButton>
@@ -180,6 +180,7 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
+          }
 
           {isUserLoggedIn && <Box sx={{ flexGrow: 0 , marginLeft:"1em"}}>
             <Tooltip title="Open settings">

@@ -1,3 +1,4 @@
+import * as React from 'react'
 import Dashboard from '../views/Dashboard';
 import Login from '../views/Login';
 import Logout from '../views/Logout';

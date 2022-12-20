@@ -1,3 +1,4 @@
+import * as React from 'react'
 import ResponsiveAppBar from "../components/ResponsiveAppBar";
 
 export default function Error(){

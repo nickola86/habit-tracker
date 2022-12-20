@@ -47,9 +47,9 @@ export default function Login() {
         <div className='login-box'>
           <Card sx={{ width: 300,height: 300, display:'flex', flexFlow:'column', alignItems:'center', justifyContent:'center'}}>
             <CardContent>
-              <TextField variant='outlined' label='Username' onChange={e=>setUsername(e.target.value)} onKeyUp={e=>{e.key==='Enter' && doLogin()}}/>
+              <TextField variant='outlined' label='Username' id='username' onChange={e=>setUsername(e.target.value)} onKeyUp={e=>{e.key==='Enter' && doLogin()}}/>
               <br/><br/>
-              <TextField variant='outlined' label='Password' type='password' onChange={e=>setPassword(e.target.value)} onKeyUp={e=>{e.key==='Enter' && doLogin()}} />
+              <TextField variant='outlined' label='Password' id='password' type='password' onChange={e=>setPassword(e.target.value)} onKeyUp={e=>{e.key==='Enter' && doLogin()}} />
             </CardContent>
             <CardActions>
               <Button size="small" onClick={doLogin}>{t('logMeIn')}</Button>

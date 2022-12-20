@@ -1,7 +1,8 @@
 export const en = {
     translation: {
-        appName: "HABIT TRACKER",
-        logMeIn: "Log me in!",
+        appName: "BITS OF HABITS",
+        logMeIn: "Log me in",
+        changeLanguage:'Change Language',
         forgotPassword: "Forgot Password?",
         notAMember: "Not a member?",    
         loginFailed:"Wrong Username or password"
