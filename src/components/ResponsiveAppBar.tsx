@@ -62,7 +62,7 @@ function ResponsiveAppBar() {
   const appSettings = settings.filter(r=>r.requiresAuthentication===isUserLoggedIn)
 
   return (
-    <AppBar position="static" style={{ background: '#07266d' }}>
+    <AppBar position="static" style={{ background: '#2c3444' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AccessAlarm sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -115,7 +115,8 @@ function ResponsiveAppBar() {
             >
               {appRoutes.map((r) => (
                 <MenuItem key={r.pageName} onClick={()=>handleCloseNavMenuAndGo(r.path)}>
-                  <Typography textAlign="center">{r.pageName}</Typography>
+                  <Typography textAlign="center"
+                  >{r.pageName}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -132,7 +133,7 @@ function ResponsiveAppBar() {
               flexGrow: 1,
               fontFamily: 'monospace',
               fontWeight: 700,
-              letterSpacing: '.3rem',
+              letterSpacing: '.1rem',
               color: 'inherit',
               textDecoration: 'none',
             }}
@@ -144,7 +145,7 @@ function ResponsiveAppBar() {
               <Button
                 key={r.pageName}
                 onClick={()=>handleCloseNavMenuAndGo(r.path)}
-                sx={{ my: 2, color: 'white', display: 'block', marginX:2 }}
+                sx={{ my: 1, color: 'white', display: 'block', marginX:1 }}
               >
                 {r.pageName}
               </Button>
@@ -185,7 +186,7 @@ function ResponsiveAppBar() {
           {isUserLoggedIn && <Box sx={{ flexGrow: 0 , marginLeft:"1em"}}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatars/kid.png" />
+                <Avatar alt="Remy Sharp" src="/static/images/avatars/user.jpg" />
               </IconButton>
             </Tooltip>
             <Menu

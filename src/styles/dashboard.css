@@ -1,0 +1,12 @@
+.dashboard-container{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.dashboard-container .graph-container{
+    margin:1em
+}
+.dashboard-container .habits-container{
+    margin:1em
+}

@@ -1,4 +1,4 @@
-import { User } from "../types"
+import { User } from "./types"
 
 export function User() {
     return <div></div>

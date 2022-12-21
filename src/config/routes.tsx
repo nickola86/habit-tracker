@@ -8,7 +8,7 @@ import Profile from '../views/Profile';
 import Settings from '../views/Settings';
 import { RouteObject } from 'react-router-dom';
 
-export const routesConfig: Array<RouteObject> = [
+export const routesConfig: RouteObject[] = [
     {
       path: "/",
       element: <Dashboard />,

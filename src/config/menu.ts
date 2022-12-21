@@ -1,11 +1,11 @@
 export const routes = [{
-pageName:'Dashboard',
-path:'/',
-requiresAuthentication: true
+  pageName:'Dashboard',
+  path:'/',
+  requiresAuthentication: true
 },{
-pageName:'Login',
-path:'/login',
-requiresAuthentication: false
+  pageName:'Login',
+  path:'/login',
+  requiresAuthentication: false
 }]
 export const settings = [
 {

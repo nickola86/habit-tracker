@@ -1,4 +1,4 @@
-import { User } from "../types";
+import { User } from "../components/types";
 
 export interface LoginRequest{
     user: User
@@ -11,9 +11,9 @@ export interface IAuthenticationService {
     login(request: LoginRequest): Promise<LoginResponse>
 }
 
-export const useAuthenticationService = (): IAuthenticationService => {
+export const useAuthentication = (): IAuthenticationService => {
     return {
-        login: (request: LoginRequest)=>{
+        login: (request: LoginRequest): Promise<LoginResponse> => {
             return new Promise((resolve, reject) => {
                 let response: LoginResponse;
                 if(request.user.username==='nicola' && request.user.password==='ditrani'){

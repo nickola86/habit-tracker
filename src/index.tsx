@@ -25,7 +25,7 @@ root.render(
         <CssBaseline />
         <GlobalStyles
           styles={(theme) => ({
-            body: { backgroundColor: (theme as Theme).palette.background.paper },
+            body: { backgroundColor: "#dddddd" },
           })}
         />
         <RouterProvider router={router} />
