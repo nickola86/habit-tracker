@@ -9,12 +9,19 @@ import reportWebVitals from './reportWebVitals';
 import { RecoilRoot } from 'recoil';
 import './i18n/i18n';
 
+import { QueryClient, QueryClientProvider } from 'react-query'
+
 import {
   createBrowserRouter,
+  Route,
+  BrowserRouter as Router,
   RouterProvider,
+  Routes,
 } from "react-router-dom";
+import ResponsiveAppBar from './components/ResponsiveAppBar';
+import { element } from 'prop-types';
 
-const router = createBrowserRouter(routesConfig);
+const queryClient = new QueryClient()
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -22,13 +29,22 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
       <RecoilRoot>
+        <QueryClientProvider client={queryClient}>
         <CssBaseline />
         <GlobalStyles
           styles={(theme) => ({
             body: { backgroundColor: "#dddddd" },
           })}
         />
-        <RouterProvider router={router} />
+        <Router>
+          <ResponsiveAppBar/>
+          <Routes>
+          {
+            routesConfig.map(r=><Route path={r.path} element={r.element}/>)
+          }
+          </Routes>
+        </Router>
+        </QueryClientProvider>
       </RecoilRoot>
   </React.StrictMode>
 );

@@ -6,7 +6,6 @@ import ResponsiveAppBar from '../components/ResponsiveAppBar';
 export default function Profile() {
   return (
       <React.Fragment>
-          <ResponsiveAppBar/>
           <div style={{ display:"flex", justifyContent:"center", alignItems:"center", marginTop:"1em"}}>
             <Avatar src="/static/images/avatars/user.jpg" sx={{width:"150px",height:"150px"}}/>
           </div>

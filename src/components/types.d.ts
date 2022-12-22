@@ -5,7 +5,7 @@ export interface HabitButtonProps {
     habit: Habit
 }
 export interface HabitsCarouselProps {
-    habits: Habit[]
+    habits?: Habit[]
     elementsPerPage: number
 }
 
@@ -51,3 +51,7 @@ export interface Habit {
 	calendar?: CalendarItem[]
 }
 
+export interface Chart {
+    title: string,
+    svg: SVGElement,
+}

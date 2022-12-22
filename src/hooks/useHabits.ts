@@ -7,60 +7,58 @@ export interface FindAllResponse {
   habits: Habit[];
 }
 export interface IHabitsService {
-  findAll(request: FindAllRequest): Promise<FindAllResponse>;
+  fetchHabits(): Promise<Habit[]>;
 }
 
-export const useHabits = (): IHabitsService => {
+export const useHabits = (user: User): IHabitsService => {
   return {
-    findAll: (request: FindAllRequest): Promise<FindAllResponse> => {
+    fetchHabits: (): Promise<Habit[]> => {
       return new Promise((resolve, reject) => {
-        const response: FindAllResponse = {
-          habits: [
+        const response = [
             {
               id: 1,
-              userId: request.user.id,
+              userId: user.id,
               title: "Correre",
               color: "#ff0000",
               icon: "🏃",
             },
             {
                 id: 2,
-                userId: request.user.id,
+                userId: user.id,
                 title: "Bere acqua",
                 color: "#00ff00",
                 icon: "🚰",
               },
               {
                 id: 2,
-                userId: request.user.id,
+                userId: user.id,
                 title: "Bere acqua",
                 color: "#00ff00",
                 icon: "",
               },
               {
                 id: 2,
-                userId: request.user.id,
+                userId: user.id,
                 title: "Bere acqua",
                 color: "#00ff00",
                 icon: "🚰",
               },
               {
                 id: 2,
-                userId: request.user.id,
+                userId: user.id,
                 title: "Bere acqua",
                 color: "#00ff00",
                 icon: "🚰",
               },
               {
                 id: 2,
-                userId: request.user.id,
+                userId: user.id,
                 title: "Bere acqua",
                 color: "#00ff00",
                 icon: "🚰",
               },
-          ],
-        };
-        resolve(response);
+        ];
+        setTimeout(()=>{resolve(response)},1000)
       });
     },
   };

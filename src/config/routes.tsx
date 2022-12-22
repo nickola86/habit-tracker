@@ -7,6 +7,7 @@ import Preferences from '../views/Preferences';
 import Profile from '../views/Profile';
 import Settings from '../views/Settings';
 import { RouteObject } from 'react-router-dom';
+import Error from '../views/Error';
 
 export const routesConfig: RouteObject[] = [
     {
@@ -37,5 +38,9 @@ export const routesConfig: RouteObject[] = [
       path: "/settings",
       element: <Settings />
     },
+    {
+      path: "*",
+      element: <Error/>
+    }
   ];
   

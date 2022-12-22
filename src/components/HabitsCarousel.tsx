@@ -3,11 +3,22 @@ import Carousel from 'react-material-ui-carousel'
 import { HabitButton } from './HabitButton';
 import { splitListByBlockSize } from '../utils/splitListByBlockSize';
 import { Habit, HabitsCarouselProps } from './types';
+import { useHabits } from '../hooks/useHabits';
+import { useRecoilValue } from 'recoil';
+import { userState } from '../atoms/userState';
+import {useQuery} from 'react-query';
+import { CircularProgress } from '@mui/material';
 
 export function HabitsCarousel(props: HabitsCarouselProps)
-{
-    const habits: Habit[] = props.habits
-    const habitsCarousel = splitListByBlockSize(habits,props.elementsPerPage)
+{   
+    const user = useRecoilValue(userState)
+    const habitsService = useHabits(user)
+    const {isLoading, isError, data: habits, error} = useQuery('habits', habitsService.fetchHabits)
+    
+    if(isLoading) return <CircularProgress color="primary" />
+    if(isError) return <h1>Errore bruttissimo!</h1>
+  
+    const habitsCarousel = splitListByBlockSize(habits || [],props.elementsPerPage)
 
     return (
         <Carousel autoPlay={false}>
