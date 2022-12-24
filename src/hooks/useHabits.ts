@@ -30,35 +30,21 @@ export const useHabits = (user: User): IHabitsService => {
                 icon: "🚰",
               },
               {
-                id: 2,
+                id: 3,
                 userId: user.id,
-                title: "Bere acqua",
+                title: "Fare la cacca",
                 color: "#00ff00",
-                icon: "",
+                icon: "💩",
               },
               {
-                id: 2,
+                id: 4,
                 userId: user.id,
-                title: "Bere acqua",
+                title: "Mangiare la frutta",
                 color: "#00ff00",
-                icon: "🚰",
-              },
-              {
-                id: 2,
-                userId: user.id,
-                title: "Bere acqua",
-                color: "#00ff00",
-                icon: "🚰",
-              },
-              {
-                id: 2,
-                userId: user.id,
-                title: "Bere acqua",
-                color: "#00ff00",
-                icon: "🚰",
-              },
+                icon: "🍒",
+              }
         ];
-        setTimeout(()=>{resolve(response)},1000)
+        setTimeout(()=>{resolve(response)},2000)
       });
     },
   };

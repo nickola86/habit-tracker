@@ -8,6 +8,7 @@ import { useRecoilValue } from 'recoil';
 import { userState } from '../atoms/userState';
 import {useQuery} from 'react-query';
 import { CircularProgress } from '@mui/material';
+import '../styles/HabitsCarousel.css'
 
 export function HabitsCarousel(props: HabitsCarouselProps)
 {   
@@ -21,10 +22,10 @@ export function HabitsCarousel(props: HabitsCarouselProps)
     const habitsCarousel = splitListByBlockSize(habits || [],props.elementsPerPage)
 
     return (
-        <Carousel autoPlay={false}>
+        <Carousel autoPlay={false}  className='carousel-theme'>
             {
                 habitsCarousel.map( (page: Habit[],i: number) => {
-                    return <div key={i} style={{margin:'1em', display:'flex', flexDirection:'row', justifyContent:'space-evenly', flexWrap:'wrap'}}>{
+                    return <div key={i} className="carousel-page-container">{
                         page.map( (h:Habit,j: number) => {
                             return <HabitButton key={j} habit={h}/>
                         })

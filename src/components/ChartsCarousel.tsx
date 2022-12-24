@@ -17,7 +17,7 @@ export function ChartsCarousel(props: any)
     if(isError) return <h1>Errore bruttissimo!</h1>
 
     return (
-        <Carousel autoPlay={false}>
+        <Carousel autoPlay={false} className='carousel-theme'>
             {
                 (charts || []).map( (c,i) => <Chart key={i} title={c.title} svg={c.svg} /> )
             }

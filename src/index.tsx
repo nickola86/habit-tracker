@@ -6,20 +6,18 @@ import GlobalStyles from '@mui/material/GlobalStyles';
 import { Theme } from '@mui/material/styles';
 import {routesConfig} from './config/routes';
 import reportWebVitals from './reportWebVitals';
-import { RecoilRoot } from 'recoil';
+import { RecoilRoot, useRecoilValue } from 'recoil';
 import './i18n/i18n';
 
 import { QueryClient, QueryClientProvider } from 'react-query'
 
 import {
-  createBrowserRouter,
   Route,
   BrowserRouter as Router,
-  RouterProvider,
   Routes,
 } from "react-router-dom";
 import ResponsiveAppBar from './components/ResponsiveAppBar';
-import { element } from 'prop-types';
+
 
 const queryClient = new QueryClient()
 
@@ -33,14 +31,14 @@ root.render(
         <CssBaseline />
         <GlobalStyles
           styles={(theme) => ({
-            body: { backgroundColor: "#dddddd" },
+            body: { backgroundColor: "#FFFFFF" },
           })}
         />
         <Router>
           <ResponsiveAppBar/>
           <Routes>
           {
-            routesConfig.map(r=><Route path={r.path} element={r.element}/>)
+            routesConfig.map((r,i)=><Route key={i} path={r.path} element={r.element}/>)
           }
           </Routes>
         </Router>

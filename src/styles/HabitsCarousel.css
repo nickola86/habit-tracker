@@ -1,0 +1,11 @@
+.carousel-page-container{
+    margin:0;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+    flex-wrap:wrap;
+}
+
+.carousel-page-container .MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded{
+    box-shadow: none;
+}

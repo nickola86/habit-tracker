@@ -3,10 +3,10 @@
     justify-content: center;
     align-items:center;
 }
-
-.dashboard-container .graph-container{
-    margin:1em
+.dashboard-container .MuiGrid-root.MuiGrid-container{
+    justify-content: center;
 }
-.dashboard-container .habits-container{
-    margin:1em
+
+.dashboard-container .MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded{
+    box-shadow:none
 }

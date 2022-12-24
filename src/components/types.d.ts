@@ -55,3 +55,13 @@ export interface Chart {
     title: string,
     svg: SVGElement,
 }
+
+type SettingCategoryType = "graphics" | "components";
+export interface Settings{
+    settings: Setting[]
+}
+export interface Setting{
+    name: string
+    value: any
+    category: SettingCategoryType
+}
