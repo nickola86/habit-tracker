@@ -5,7 +5,7 @@ export const en = {
         changeLanguage:'Change Language',
         forgotPassword: "Forgot Password?",
         notAMember: "Not a member?",    
-        loginFailed:"Wrong Username or password",
+        loginFailed:"Wrong username or password",
         month_0:"January",
         month_1:"February",
         month_2:"March",

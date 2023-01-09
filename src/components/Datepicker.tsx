@@ -15,7 +15,7 @@ export const DatePicker = (props: any) => {
 
     return <div className='datepicker-container'>
         <div className="button" onClick={()=>{setDateSelected(addDays(dateSelected,-4))}}>
-            &lt;
+            &#x1F860;
         </div>
         <div className='calendar'>
             {toggleDatePicker===false ? <p className='month' onClick={()=>setToggleDatePicker(!toggleDatePicker)}>{`${getMonthName(dateSelected)} '${getShortYear(dateSelected)}`}</p> : <p>datepicker</p>}
@@ -24,7 +24,7 @@ export const DatePicker = (props: any) => {
             </div>
         </div>
         <div className={"button " + (addDays(dateSelected,4) > today ? 'disabled' : '')} onClick={()=>{addDays(dateSelected,4) <= today? setDateSelected(addDays(dateSelected,4)): setDateSelected(today)}}>
-            &gt;
+            &#x1F862;
         </div>
     </div>;
 }

@@ -5,11 +5,17 @@ import { Habit, HabitButtonProps } from './types';
 import { Typography } from '@mui/material';
 
 import '../styles/HabitButton.css'
+import { useNavigate } from 'react-router-dom';
 
 export const HabitButton = (props:HabitButtonProps) => {
     const h: Habit = props.habit
+    const navigate = useNavigate()
+    const habitDetail = () => {
+        console.log("habitDetail click!")
+        navigate(`/habit/${h.id}`)
+    }
     return <Card className='habit-button-card'>
-        <CardContent>
+        <CardContent onClick={habitDetail}>
             <Typography>{h.icon}</Typography>
             <Typography>{h.title}</Typography>
         </CardContent>

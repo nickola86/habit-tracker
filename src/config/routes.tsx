@@ -23,7 +23,7 @@ export const routesConfig: RouteObject[] = [
       element: <Logout />
     },
     {
-      path: "/habit",
+      path: "/habit/:id?",
       element: <Habit />
     },
     {
