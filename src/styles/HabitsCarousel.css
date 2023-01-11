@@ -6,6 +6,6 @@
     flex-wrap:wrap;
 }
 
-.carousel-page-container .MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded{
-    box-shadow: none;
+.carousel-theme{
+    min-height: 300px;
 }

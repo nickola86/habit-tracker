@@ -16,7 +16,8 @@ export interface Route{
     pageName: string
     path: string
     requiresAuthentication: boolean
-    action?:function
+    action?:function,
+    icon?:Element
 }
 
 export interface User{

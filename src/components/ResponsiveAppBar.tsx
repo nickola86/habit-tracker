@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { styled, useTheme } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -7,22 +8,22 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
-import AccessAlarm from '@mui/icons-material/AccessAlarm';
 import { useNavigate } from "react-router-dom";
 import { routes, settings } from '../config/menu';
 import { useRecoilValue } from 'recoil';
 import { userState } from '../atoms/userState';
 import { useTranslation } from 'react-i18next';
-import { flexbox } from '@mui/system';
-import { Divider } from '@mui/material';
+
+import { Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 
 function ResponsiveAppBar() {
+
   const { t, i18n } = useTranslation();
   const languages = Object.keys(i18n.services.resourceStore.data);
   const {isUserLoggedIn} = useRecoilValue(userState)
@@ -33,6 +34,17 @@ function ResponsiveAppBar() {
   const [showNotifications, setShowNotifications] = React.useState(false);
   
   const navigate = useNavigate();
+
+  const theme = useTheme()
+
+  const DrawerHeader = styled('div')(({ theme }) => ({
+    display: 'flex',
+    alignItems: 'center',
+    padding: theme.spacing(0, 1),
+    ...theme.mixins.toolbar,
+    justifyContent: 'flex-end',
+  }));
+  
   
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setDrawerOpen(true);
@@ -197,24 +209,37 @@ function ResponsiveAppBar() {
             open={isDrawerOpen}
             onClose={()=>setDrawerOpen(false)}
           >
-            <MenuItem sx={{display:'flex',justifyContent:'right'}}>
-              <CloseIcon onClick={()=>setDrawerOpen(false)} />
-            </MenuItem>
+            <DrawerHeader>
+              <IconButton onClick={()=>setDrawerOpen(false)}>
+                <ChevronLeftIcon />
+              </IconButton>
+            </DrawerHeader>
+            <Divider />
+            <List>
             {appRoutes.map((s) => (
-              <React.Fragment>
-                <MenuItem key={s.pageName} onClick={()=>handleCloseNavMenuAndGo(s.path)}>
-                  <Typography sx={{padding:'.5em 2em .5em .5em'}}>{t(s.pageName)}</Typography>
-                </MenuItem>
-              </React.Fragment>
+                <ListItem key={s.pageName} disablePadding onClick={()=>handleCloseNavMenuAndGo(s.path)}>
+                <ListItemButton>
+                  <ListItemIcon>
+                    {s.icon}
+                  </ListItemIcon>
+                  <ListItemText primary={t(s.pageName)} />
+                </ListItemButton>
+              </ListItem>
             ))}
+            </List>
             <Divider/>
+            <List>
             {appSettings.map((s) => (
-              <React.Fragment>
-                <MenuItem key={s.pageName} onClick={()=>handleCloseNavMenuAndGo(s.path)}>
-                  <Typography sx={{padding:'.5em 2em .5em .5em'}}>{t(s.pageName)}</Typography>
-                </MenuItem>
-              </React.Fragment>
+              <ListItem key={s.pageName} disablePadding onClick={()=>handleCloseNavMenuAndGo(s.path)}>
+              <ListItemButton>
+                <ListItemIcon>
+                  {s.icon}
+                </ListItemIcon>
+                <ListItemText primary={t(s.pageName)} />
+              </ListItemButton>
+            </ListItem>
             ))}
+            </List>
             <Divider/>
           </Drawer>}
 

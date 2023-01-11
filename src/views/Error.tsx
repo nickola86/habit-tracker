@@ -8,8 +8,10 @@ export default function Error(){
             <Typography mt={3} mb={3}>
                 <Typewriter
                     onInit={(typewriter) => {
-                    typewriter.typeString('Oh no! Something awfully wrong here! ')
+                        typewriter.changeDelay(20).changeDeleteSpeed(100)
+                        .typeString('Oh no! Something awfully wrong here!')
                         .pauseFor(1000)
+                        .deleteAll()
                         .typeString('If you meet Joy, tell her this UUID: 564f1a9e-f013-43a5-b428-8ae0d8f16556')
                         .start();
                     }}

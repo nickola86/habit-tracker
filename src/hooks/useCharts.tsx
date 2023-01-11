@@ -14,10 +14,10 @@ export const useCharts = (user: User): IChartsService => {
         
         const response: Chart[] = [
           {
-            title: "grafico andamento 1",
+            title: "",
             svg: svg1
           },{
-            title: "grafico andamento 2",
+            title: "",
             svg: svg2
           },
         ];

@@ -47,19 +47,19 @@ export default function Login() {
 
   return (
     <React.Fragment>
-
       <div className="login-box">
         <Card
           sx={{
             width: 300,
-            height: 300,
+            height: 340,
             display: "flex",
             flexFlow: "column",
             alignItems: "center",
-            justifyContent: "center",
+            justifyContent: "start",
           }}
         >
           <CardContent>
+            <Typography variant="h6" mb={2} mt={2}>{t('Login')}</Typography>
             <TextField
               variant="outlined"
               label={t("Username")}
@@ -87,20 +87,17 @@ export default function Login() {
               {t("logMeIn")}
             </Button>
           </CardActions>
-          <Typography sx={{ fontSize: 12 }} color="text.secondary" gutterBottom>
+          <Typography sx={{ fontSize: 12 }} color="text.secondary" mb={2}>
             <Link color="inherit" href="/forgotpassword">
               {t("forgotPassword")}
             </Link>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <Link color="inherit" href="/signup">
+            <Link ml={2} color="inherit" href="/signup">
               {t("notAMember")}
             </Link>
           </Typography>
-          {loginStatus === "fail" && (
-            <Typography sx={{ fontSize: 12 }} color="red" gutterBottom>
-              {t("loginFailed")}
-            </Typography>
-          )}
+          <Typography sx={{ fontSize: 12 }} color="red" mb={3}>
+              {loginStatus === "fail" && t("loginFailed")}
+          </Typography>
         </Card>
       </div>
     </React.Fragment>

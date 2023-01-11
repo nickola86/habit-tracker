@@ -14,6 +14,8 @@ import { styled, useTheme } from '@mui/material/styles';
 import { ChartsCarousel } from '../components/ChartsCarousel'
 import { HabitsCarousel } from '../components/HabitsCarousel'
 import { DatePicker } from '../components/Datepicker'
+import { Divider, Typography } from '@mui/material'
+import { useTranslation } from 'react-i18next'
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -25,6 +27,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function Dashboard() {
+  const { t } = useTranslation();
   const navigate = useNavigate()
   const user = useRecoilValue(userState)
   const isUserLoggedIn = user.isUserLoggedIn
@@ -41,14 +44,21 @@ export default function Dashboard() {
             <Grid item md={12} xs={12}>
               <DatePicker/>
             </Grid>
-            <Grid item md={8} xs={12}>
+            <Grid item md={12} xs={12} mt={2}>
+              <Divider/>
+            </Grid>
+            <Grid item md={6} xs={12}>
               <Item>
+                <Typography variant='h5' mb={1}>{t('DashboardChartsTitle')}</Typography>
                 <ChartsCarousel />
+                <Divider sx={{marginTop:'2em',marginBottom:'2em'}}/>
               </Item>
             </Grid>
-            <Grid item md={8} xs={12}>
+            <Grid item md={6} xs={12}>
               <Item>
+                <Typography variant='h5' mb={1}>{t('DashboardHabitsTitle')}</Typography>
                 <HabitsCarousel elementsPerPage={ 4 } />
+                <Divider sx={{marginTop:'2em',marginBottom:'2em'}}/>
               </Item>
               <div style={{display:'flex',justifyContent:'center'}}>
                 <Fab color="primary" aria-label="add" style={{float:'right'}}>

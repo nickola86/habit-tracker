@@ -7,6 +7,7 @@ export const it = {
         forgotPassword: "Password dimenticata?",
         notAMember: "Non sei iscritto?",
         loginFailed:"Username o password non validi",
+        "Login": "Accedi",
         "Dashboard": "Cruscotto",
         "Profile": "Profilo utente",
         "Settings": "Impostazioni",
@@ -24,5 +25,7 @@ export const it = {
         month_9:"Ottobre",
         month_10:"Novembre",
         month_11:"Dicembre",
+        DashboardChartsTitle:"Le statistiche dell'ultima settimana",
+        DashboardHabitsTitle:"Le mie abitudini",
     }
 }

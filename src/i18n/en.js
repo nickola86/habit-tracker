@@ -7,6 +7,7 @@ export const en = {
         forgotPassword: "Forgot Password?",
         notAMember: "Not a member?",    
         loginFailed:"Wrong username or password",
+        "Login": "Login",
         "Dashboard": "Dashboard",
         "Profile": "User profile",
         "Settings": "Settings",
@@ -24,5 +25,7 @@ export const en = {
         month_9:"October",
         month_10:"November",
         month_11:"December",
+        DashboardChartsTitle:"Last week's report",
+        DashboardHabitsTitle:"My habits",
     }
 }
