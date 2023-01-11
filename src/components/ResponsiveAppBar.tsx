@@ -3,20 +3,24 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import Drawer from '@mui/material/Drawer';
 import AccessAlarm from '@mui/icons-material/AccessAlarm';
 import { useNavigate } from "react-router-dom";
 import { routes, settings } from '../config/menu';
 import { useRecoilValue } from 'recoil';
 import { userState } from '../atoms/userState';
 import { useTranslation } from 'react-i18next';
+import { flexbox } from '@mui/system';
+import { Divider } from '@mui/material';
 
 function ResponsiveAppBar() {
   const { t, i18n } = useTranslation();
@@ -25,14 +29,13 @@ function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
   const [anchorElLang, setAnchorElLang] = React.useState<null | HTMLElement>(null);
+  const [isDrawerOpen, setDrawerOpen] = React.useState(false);
+  const [showNotifications, setShowNotifications] = React.useState(false);
+  
   const navigate = useNavigate();
   
-
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
+    setDrawerOpen(true);
   };
   const handleOpenLangMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElLang(event.currentTarget);
@@ -50,6 +53,7 @@ function ResponsiveAppBar() {
   };
   const handleCloseNavMenuAndGo = (path: string) => {
     handleCloseNavMenu()
+    setDrawerOpen(false)
     navigate(path)
   };
 
@@ -62,39 +66,20 @@ function ResponsiveAppBar() {
   const appSettings = settings.filter(r=>r.requiresAuthentication===isUserLoggedIn)
 
   return (
-    <AppBar position="static" style={{ background: '#2c3444' }}>
+    <AppBar position="static" style={{ background: '#ffffff' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AccessAlarm sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
+          <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={handleOpenUserMenu}
+            color="default"
           >
-          {t('appName')}
-          </Typography>
-
+             {isUserLoggedIn && <MenuIcon />}
+          </IconButton>        
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -121,7 +106,6 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <AccessAlarm sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -129,28 +113,18 @@ function ResponsiveAppBar() {
             href=""
             sx={{
               mr: 2,
-              display: { xs: 'flex', md: 'none' },
+              ml:1,
+              display: { xs: 'flex', md: 'flex' },
               flexGrow: 1,
               fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.1rem',
-              color: 'inherit',
+              fontWeight: 600,
+              letterSpacing: '.01rem',
+              color: 'black',
               textDecoration: 'none',
             }}
           >
-          {t('appName')}
+            {t('appName')}
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {appRoutes.map((r) => (
-              <Button
-                key={r.pageName}
-                onClick={()=>handleCloseNavMenuAndGo(r.path)}
-                sx={{ my: 1, color: 'white', display: 'block', marginX:1 }}
-              >
-                {r.pageName}
-              </Button>
-            ))}
-          </Box>
 
           {!isUserLoggedIn && <Box sx={{ flexGrow: 0}}>
             <Tooltip title={t('changeLanguage')}>
@@ -176,7 +150,7 @@ function ResponsiveAppBar() {
             >
               {languages.map((l) => (
                 <MenuItem key={l} onClick={()=>switchLanguage(l)}>
-                  <Avatar alt="Italian" src={`/static/images/flags/${l}.svg`} />
+                  <Avatar src={`/static/images/flags/${l}.svg`} />
                 </MenuItem>
               ))}
             </Menu>
@@ -184,11 +158,6 @@ function ResponsiveAppBar() {
           }
 
           {isUserLoggedIn && <Box sx={{ flexGrow: 0 , marginLeft:"1em"}}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatars/user.jpg" />
-              </IconButton>
-            </Tooltip>
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
@@ -205,13 +174,63 @@ function ResponsiveAppBar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
+              {appRoutes.map((s) => (
+                <React.Fragment>
+                  <MenuItem key={s.pageName} onClick={()=>handleCloseNavMenuAndGo(s.path)}>
+                    <Typography textAlign="center">{t(s.pageName)}</Typography>
+                  </MenuItem>
+                </React.Fragment>
+              ))}
+              <hr/>
               {appSettings.map((s) => (
-                <MenuItem key={s.pageName} onClick={()=>handleCloseNavMenuAndGo(s.path)}>
-                  <Typography textAlign="center">{s.pageName}</Typography>
-                </MenuItem>
+                <React.Fragment>
+                  <MenuItem key={s.pageName} onClick={()=>handleCloseNavMenuAndGo(s.path)}>
+                    <Typography textAlign="center">{t(s.pageName)}</Typography>
+                  </MenuItem>
+                </React.Fragment>
               ))}
             </Menu>
           </Box>}
+
+          {isUserLoggedIn && <Drawer
+            anchor="left"
+            open={isDrawerOpen}
+            onClose={()=>setDrawerOpen(false)}
+          >
+            <MenuItem sx={{display:'flex',justifyContent:'right'}}>
+              <CloseIcon onClick={()=>setDrawerOpen(false)} />
+            </MenuItem>
+            {appRoutes.map((s) => (
+              <React.Fragment>
+                <MenuItem key={s.pageName} onClick={()=>handleCloseNavMenuAndGo(s.path)}>
+                  <Typography sx={{padding:'.5em 2em .5em .5em'}}>{t(s.pageName)}</Typography>
+                </MenuItem>
+              </React.Fragment>
+            ))}
+            <Divider/>
+            {appSettings.map((s) => (
+              <React.Fragment>
+                <MenuItem key={s.pageName} onClick={()=>handleCloseNavMenuAndGo(s.path)}>
+                  <Typography sx={{padding:'.5em 2em .5em .5em'}}>{t(s.pageName)}</Typography>
+                </MenuItem>
+              </React.Fragment>
+            ))}
+            <Divider/>
+          </Drawer>}
+
+          {isUserLoggedIn && 
+            <React.Fragment>
+              {
+                showNotifications && 
+                <IconButton onClick={()=>null} sx={{ p: 1 }}>                
+                  <Typography color={'black'}><NotificationsIcon /></Typography>
+                </IconButton>
+              }
+              <IconButton onClick={()=>navigate('/profile')} sx={{ p: 1 }}>
+                <Avatar src={`/static/images/avatars/user.jpg`} />
+              </IconButton>
+            </React.Fragment>
+          }
         </Toolbar>
       </Container>
     </AppBar>

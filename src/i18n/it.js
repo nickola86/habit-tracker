@@ -1,11 +1,17 @@
 export const it = {
     translation : {
+        language: "Italiano",
         appName: "BITS OF HABITS",
         logMeIn: "Entra",
         changeLanguage:'Cambia lingua',
         forgotPassword: "Password dimenticata?",
         notAMember: "Non sei iscritto?",
         loginFailed:"Username o password non validi",
+        "Dashboard": "Cruscotto",
+        "Profile": "Profilo utente",
+        "Settings": "Impostazioni",
+        "Logout": "Esci",
+        "Username":"Nome utente",
         month_0:"Gennaio",
         month_1:"Febbraio",
         month_2:"Marzo",

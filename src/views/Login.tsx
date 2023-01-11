@@ -47,6 +47,7 @@ export default function Login() {
 
   return (
     <React.Fragment>
+
       <div className="login-box">
         <Card
           sx={{
@@ -61,7 +62,7 @@ export default function Login() {
           <CardContent>
             <TextField
               variant="outlined"
-              label="Username"
+              label={t("Username")}
               id="username"
               onChange={(e) => setUsername(e.target.value)}
               onKeyUp={(e) => {

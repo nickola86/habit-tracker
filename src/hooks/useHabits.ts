@@ -32,13 +32,6 @@ export const useHabits = (user: User): IHabitsService => {
               {
                 id: 3,
                 userId: user.id,
-                title: "Fare la cacca",
-                color: "#00ff00",
-                icon: "💩",
-              },
-              {
-                id: 4,
-                userId: user.id,
                 title: "Mangiare la frutta",
                 color: "#00ff00",
                 icon: "🍒",

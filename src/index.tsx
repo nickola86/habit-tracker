@@ -38,8 +38,10 @@ root.render(
           <ResponsiveAppBar/>
           <Routes>
           {
-            routesConfig.map((r,i)=><Route key={i} path={r.path} element={r.element}/>)
-          }
+            routesConfig.map((r,i)=>
+              <Route key={i} path={r.path} element={r.element}/>
+              )
+          }            
           </Routes>
         </Router>
         </QueryClientProvider>
