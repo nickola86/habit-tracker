@@ -27,6 +27,7 @@
     cursor:default;
     color: lightgray;
     border-color: lightgray;
+    box-shadow: none;
 }
 .datepicker-container div.calendar{
     display: flex;

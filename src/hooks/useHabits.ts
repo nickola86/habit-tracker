@@ -15,27 +15,34 @@ export const useHabits = (user: User): IHabitsService => {
     fetchHabits: (): Promise<Habit[]> => {
       return new Promise((resolve, reject) => {
         const response = [
-            {
-              id: 1,
+          {
+            id: 1,
+            userId: user.id,
+            title: "Correre",
+            color: "#ff0000",
+            icon: "🏃",
+          },
+          {
+            id: 2,
+            userId: user.id,
+            title: "Fare addominali",
+            color: "#ff0000",
+            icon: "🏋️‍♂️",
+          },
+          {
+              id: 3,
               userId: user.id,
-              title: "Correre",
-              color: "#ff0000",
-              icon: "🏃",
+              title: "Bere acqua",
+              color: "#00ff00",
+              icon: "🚰",
             },
             {
-                id: 2,
-                userId: user.id,
-                title: "Bere acqua",
-                color: "#00ff00",
-                icon: "🚰",
-              },
-              {
-                id: 3,
-                userId: user.id,
-                title: "Mangiare la frutta",
-                color: "#00ff00",
-                icon: "🍒",
-              }
+              id: 4,
+              userId: user.id,
+              title: "Mangiare la frutta",
+              color: "#00ff00",
+              icon: "🍒",
+            }
         ];
         setTimeout(()=>{resolve(response)},2000)
       });

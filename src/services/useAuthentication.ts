@@ -1,3 +1,4 @@
+import { useQuery } from "react-query";
 import { User } from "../components/types";
 
 export interface LoginRequest{
@@ -14,6 +15,7 @@ export interface IAuthenticationService {
 export const useAuthentication = (): IAuthenticationService => {
     return {
         login: (request: LoginRequest): Promise<LoginResponse> => {
+            const {isLoading, isError, data , error} = useQuery('login')
             return new Promise((resolve, reject) => {
                 let response: LoginResponse;
                 if(request.user.username==='nicola' && request.user.password==='ditrani'){

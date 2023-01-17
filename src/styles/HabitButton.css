@@ -5,7 +5,7 @@
     flex-flow:column;
     align-items:center;
     justify-content:space-evenly;
-    margin-top: 2em;
+    margin-bottom: 2em;
     margin-left:0.5em;
     margin-right:0.5em;
     border-radius: 20px;
@@ -15,5 +15,5 @@
 }
 
 .carousel-page-container .MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.habit-button-card:hover{
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+    box-shadow: rgba(135, 106, 106, 0.35) 0px 5px 10px;
 }

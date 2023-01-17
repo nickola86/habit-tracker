@@ -20,6 +20,7 @@ import {
   LoginResponse,
 } from "../services/useAuthentication";
 import { User } from "../components/types";
+import { useMutation, useQuery } from "react-query";
 
 export default function Login() {
   const { t } = useTranslation();
@@ -28,12 +29,24 @@ export default function Login() {
   const [user, setUser] = useRecoilState(userState);
   const navigate = useNavigate();
   const [loginStatus, setLoginStatus] = useState("");
+  
   const authSvc = useAuthentication();
+  const loginMutation = useMutation(authSvc.login)
 
   useEffect(() => {
     if (user.isUserLoggedIn) navigate("/");
   }, [user, navigate]);
 
+  /*
+  const doLogin = async () => {
+    const user: User = { username, password };
+    const loginRequest: LoginRequest = {
+      user,
+    };
+    await loginMutation.mutate(loginRequest)
+    setUser(loginMutation.data?.user || {});
+    setLoginStatus(loginMutation.data?.status || "");
+  };*/
   const doLogin = () => {
     const user: User = { username, password };
     const loginRequest: LoginRequest = {

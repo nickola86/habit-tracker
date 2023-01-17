@@ -1,5 +1,5 @@
 .dashboard-container .carousel-theme{
-    overflow:visible
+    overflow:visible;
 }
 .dashboard-container .carousel-theme .MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiCard-root.chart-card{
     border-radius: 20px;
