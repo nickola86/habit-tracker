@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useRecoilValue } from "recoil"
 import {userState} from '../atoms/userState'
-import '../styles/dashboard.css'
+import '../styles/Dashboard.css'
 
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
