@@ -187,19 +187,15 @@ function ResponsiveAppBar() {
               onClose={handleCloseUserMenu}
             >
               {appRoutes.map((s) => (
-                <React.Fragment>
                   <MenuItem key={s.pageName} onClick={()=>handleCloseNavMenuAndGo(s.path)}>
                     <Typography textAlign="center">{t(s.pageName)}</Typography>
                   </MenuItem>
-                </React.Fragment>
               ))}
               <hr/>
               {appSettings.map((s) => (
-                <React.Fragment>
                   <MenuItem key={s.pageName} onClick={()=>handleCloseNavMenuAndGo(s.path)}>
                     <Typography textAlign="center">{t(s.pageName)}</Typography>
                   </MenuItem>
-                </React.Fragment>
               ))}
             </Menu>
           </Box>}
