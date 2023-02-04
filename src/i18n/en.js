@@ -27,5 +27,6 @@ export const en = {
         month_11:"December",
         DashboardChartsTitle:"Last week's report",
         DashboardHabitsTitle:"My habits",
+        "Request failed with status code 401": "User not authorized"
     }
 }

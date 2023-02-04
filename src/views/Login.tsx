@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState, useEffect } from "react";
+import {useState} from "react";
 import { useRecoilState } from "recoil";
 import { userState } from "../atoms/userState";
 import { useNavigate } from "react-router-dom";
@@ -12,15 +12,14 @@ import CardContent from "@mui/material/CardContent";
 import TextField from "@mui/material/TextField";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
-import ResponsiveAppBar from "../components/ResponsiveAppBar";
 import "../styles/Login.css";
-import {
-  useAuthentication,
-  LoginRequest,
-  LoginResponse,
-} from "../services/useAuthentication";
-import { User } from "../components/types";
 import { useMutation, useQuery } from "react-query";
+import {bearerState} from "../atoms/bearer"
+import * as LoginApi from '../api/LoginApi'
+import {LoginRequest, LoginResponse} from "../api/LoginApi";
+import {AxiosResponse,AxiosError} from "axios";
+import {Spinner} from "../components/Spinner";
+import {CircularProgress} from "@mui/material";
 
 export default function Login() {
   const { t } = useTranslation();
@@ -28,35 +27,35 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [user, setUser] = useRecoilState(userState);
   const navigate = useNavigate();
-  const [loginStatus, setLoginStatus] = useState("");
-  
-  const authSvc = useAuthentication();
-  const loginMutation = useMutation(authSvc.login)
+  const [loginStatus, setLoginStatus] = useState('');
+  const [loginErrorMessage, setLoginErrorMessage] = useState('');
+  const [bearer,setBearer] = useRecoilState(bearerState)
 
-  useEffect(() => {
-    if (user.isUserLoggedIn) navigate("/");
-  }, [user, navigate]);
 
-  /*
-  const doLogin = async () => {
-    const user: User = { username, password };
-    const loginRequest: LoginRequest = {
-      user,
-    };
-    await loginMutation.mutate(loginRequest)
-    setUser(loginMutation.data?.user || {});
-    setLoginStatus(loginMutation.data?.status || "");
-  };*/
-  const doLogin = () => {
-    const user: User = { username, password };
-    const loginRequest: LoginRequest = {
-      user,
-    };
-    authSvc.login(loginRequest).then((loginResponse: LoginResponse) => {
-      setUser(loginResponse.user);
-      setLoginStatus(loginResponse.status);
-    });
-  };
+  const loginMutation = useMutation(LoginApi.doLogin,
+      {
+        onSuccess:(response: LoginResponse)=>{
+          setLoginStatus('success')
+          setBearer(response.access_token)
+          setUser({isUserLoggedIn:true, ...response.user})
+          navigate("/")
+        },
+        onError:(error: AxiosError)=>{
+            setLoginStatus('fail')
+            setLoginErrorMessage(error.message)
+            console.log(error)
+        },
+      })
+
+  const doLogin = async (event: React.MouseEvent | React.KeyboardEvent | React.ChangeEvent) => {
+      event.preventDefault()
+      const request: LoginRequest = {
+          user : {
+              username, password
+          }
+      }
+      loginMutation.mutate(request)
+  }
 
   return (
     <React.Fragment>
@@ -79,7 +78,7 @@ export default function Login() {
               id="username"
               onChange={(e) => setUsername(e.target.value)}
               onKeyUp={(e) => {
-                e.key === "Enter" && doLogin();
+                e.key === "Enter" && doLogin(e);
               }}
             />
             <br />
@@ -89,17 +88,23 @@ export default function Login() {
               label="Password"
               id="password"
               type="password"
-              onChange={(e) => setPassword(e.target.value)}
-              onKeyUp={(e) => {
-                e.key === "Enter" && doLogin();
+              onChange={(e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => setPassword(e.target.value)}
+              onKeyUp={(e: React.KeyboardEvent<HTMLDivElement>) => {
+                e.key === "Enter" && doLogin(e);
               }}
             />
           </CardContent>
-          <CardActions>
-            <Button size="small" onClick={doLogin}>
-              {t("logMeIn")}
-            </Button>
-          </CardActions>
+            {
+                !loginMutation.isLoading &&
+                <CardActions>
+                    <Button size="small" onClick={(e: React.MouseEvent<HTMLAnchorElement> | React.MouseEvent<HTMLButtonElement>)=>{doLogin(e)}}>
+                        {t("logMeIn")}
+                    </Button>
+                </CardActions>
+            }
+            {
+                !!loginMutation.isLoading && <CircularProgress/>
+            }
           <Typography sx={{ fontSize: 12 }} color="text.secondary" mb={2}>
             <Link color="inherit" href="/forgotpassword">
               {t("forgotPassword")}
@@ -109,7 +114,7 @@ export default function Login() {
             </Link>
           </Typography>
           <Typography sx={{ fontSize: 12 }} color="red" mb={3}>
-              {loginStatus === "fail" && t("loginFailed")}
+              {loginStatus === "fail" && t(loginErrorMessage)}
           </Typography>
         </Card>
       </div>

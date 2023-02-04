@@ -10,6 +10,7 @@ import { RecoilRoot, useRecoilValue } from 'recoil';
 import './i18n/i18n';
 
 import { QueryClient, QueryClientProvider } from 'react-query'
+import {ReactQueryDevtools} from "react-query/devtools";
 
 import {
   Route,
@@ -28,22 +29,23 @@ root.render(
   <React.StrictMode>
       <RecoilRoot>
         <QueryClientProvider client={queryClient}>
-        <CssBaseline />
-        <GlobalStyles
-          styles={(theme) => ({
-            body: { backgroundColor: "#FFFFFF" },
-          })}
-        />
-        <Router>
-          <ResponsiveAppBar/>
-          <Routes>
-          {
-            routesConfig.map((r,i)=>
-              <Route key={i} path={r.path} element={r.element}/>
-              )
-          }            
-          </Routes>
-        </Router>
+          <CssBaseline />
+          <GlobalStyles
+            styles={(theme) => ({
+              body: { backgroundColor: "#FFFFFF" },
+            })}
+          />
+          <Router>
+            <ResponsiveAppBar/>
+            <Routes>
+            {
+              routesConfig.map((r,i)=>
+                <Route key={i} path={r.path} element={r.element}/>
+                )
+            }
+            </Routes>
+          </Router>
+          <ReactQueryDevtools/>
         </QueryClientProvider>
       </RecoilRoot>
   </React.StrictMode>

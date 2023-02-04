@@ -27,5 +27,7 @@ export const it = {
         month_11:"Dicembre",
         DashboardChartsTitle:"Le statistiche dell'ultima settimana",
         DashboardHabitsTitle:"Le mie abitudini",
+        "Network Error": "Errore di rete",
+        "Request failed with status code 401": "Utente non autorizzato"
     }
 }
