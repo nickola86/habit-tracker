@@ -3,14 +3,14 @@ import Carousel from 'react-material-ui-carousel'
 import { CircularProgress } from '@mui/material'
 import {Chart} from './Chart'
 import { useRecoilValue } from 'recoil';
-import { useCharts } from '../hooks/useCharts';
+import { useChartsApi } from '../hooks/useChartsApi';
 import { userState } from '../atoms/userState';
 import {useQuery} from 'react-query';
 
 export function ChartsCarousel(props: any)
 {
     const user = useRecoilValue(userState)
-    const chartsService = useCharts(user)
+    const chartsService = useChartsApi(user)
     const {isLoading, isError, data: charts, error} = useQuery('dashboardcharts', chartsService.fetchDashboardCharts)
     
     if(isLoading) return <CircularProgress color="primary" />

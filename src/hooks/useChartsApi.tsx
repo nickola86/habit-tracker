@@ -5,7 +5,7 @@ export interface IChartsService {
   fetchDashboardCharts(): Promise<Chart[]>;
 }
 
-export const useCharts = (user: User): IChartsService => {
+export const useChartsApi = (user: User): IChartsService => {
   return {
     fetchDashboardCharts: (): Promise<Chart[]> => {
       return new Promise((resolve, reject) => {

@@ -13,6 +13,8 @@ export const it = {
         "Settings": "Impostazioni",
         "Logout": "Esci",
         "Username":"Nome utente",
+        "MemberSince": "Iscritto dal",
+        "Achivements": "Riconoscimenti",
         month_0:"Gennaio",
         month_1:"Febbraio",
         month_2:"Marzo",

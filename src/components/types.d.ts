@@ -2,8 +2,14 @@
 VIEWS
 */
 export interface HabitButtonProps {
-    habit: Habit
+  habit: Habit
 }
+export interface BadgeProps {
+  icon: string,
+  title: string,
+   description: string
+}
+
 export interface HabitsCarouselProps {
     habits?: Habit[]
     elementsPerPage: number
@@ -27,8 +33,15 @@ export interface User{
     isUserLoggedIn?: boolean
     loginSuccess?: boolean
     bearer?: string
+    signupdate?: Date
 }
 
+export interface Badge{
+  icon: string
+  userId: number
+  title: string
+  description: string
+}
 type CategoryType = "wellness" | "health" | "sport";
 type RecurrencyType = "daily" | "weekly" | "monthly";
 type GoalBaseType = "daily" | "weekly" | "monthly";

@@ -13,6 +13,7 @@ export const en = {
         "Settings": "Settings",
         "Logout": "Logout",
         "Username":"Username",
+        "MemberSince": "Member since",
         month_0:"January",
         month_1:"February",
         month_2:"March",
