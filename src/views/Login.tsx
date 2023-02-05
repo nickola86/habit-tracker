@@ -1,5 +1,5 @@
 import * as React from "react";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import { useRecoilState } from "recoil";
 import { userState } from "../atoms/userState";
 import { useNavigate } from "react-router-dom";
@@ -13,13 +13,13 @@ import TextField from "@mui/material/TextField";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import "../styles/Login.css";
-import { useMutation, useQuery } from "react-query";
-import {bearerState} from "../atoms/bearerState"
+import {useMutation, useQuery, UseQueryResult} from "react-query";
 import * as LoginApi from '../api/LoginApi'
 import {LoginRequest, LoginResponse} from "../api/LoginApi";
-import {AxiosResponse,AxiosError} from "axios";
-import {Spinner} from "../components/Spinner";
+import {AxiosError} from "axios";
 import {CircularProgress} from "@mui/material";
+import {useLocalStorage} from "../hooks/useLocalStorage";
+import {User} from "../components/types";
 
 export default function Login() {
   const { t } = useTranslation();
@@ -29,15 +29,14 @@ export default function Login() {
   const navigate = useNavigate();
   const [loginStatus, setLoginStatus] = useState('');
   const [loginErrorMessage, setLoginErrorMessage] = useState('');
-  const [bearer,setBearer] = useRecoilState(bearerState)
-
+  const [bearer,setBearer] = useLocalStorage('bearer','')
 
   const loginMutation = useMutation(LoginApi.doLogin,
       {
         onSuccess:(response: LoginResponse)=>{
           setLoginStatus('success')
           setBearer(response.access_token)
-          setUser({isUserLoggedIn:true, ...response.user})
+          setUser({isUserLoggedIn:true, bearer: response.access_token, ...response.user})
           navigate("/")
         },
         onError:(error: AxiosError)=>{
@@ -46,6 +45,14 @@ export default function Login() {
             console.log(error)
         },
       })
+  let loginQuery: UseQueryResult<User> | null = null
+  if(typeof bearer !== 'undefined' && bearer !== '') loginQuery = useQuery('getUser',()=>{return LoginApi.getUser(bearer)})
+  useEffect(() => {
+    if(loginQuery !== null && loginQuery.isSuccess && typeof loginQuery.data !== 'undefined'){
+      setUser(loginQuery.data)
+      navigate('/')
+    }
+  },[loginQuery])
 
   const doLogin = async (event: React.MouseEvent | React.KeyboardEvent | React.ChangeEvent) => {
       event.preventDefault()

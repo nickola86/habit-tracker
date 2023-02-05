@@ -15,6 +15,10 @@ const api = axios.create({
     withCredentials:false
 })
 
-const uri: string = '/auth/login'
+const doLoginUri: string = '/auth/login'
 
-export const doLogin = ({user}: LoginRequest): Promise<LoginResponse> => api.post(uri, {username:user.username,password:user.password}).then(res=>res.data)
+const getUserUri: string = '/auth/user'
+
+export const getUser = (bearer: string): Promise<User> => api.get(getUserUri+'/'+bearer).then(res=>res.data)
+
+export const doLogin = ({user}: LoginRequest): Promise<LoginResponse> => api.post(doLoginUri, {username:user.username,password:user.password}).then(res=>res.data)

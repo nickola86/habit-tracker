@@ -22,10 +22,11 @@ export interface Route{
 
 export interface User{
     id?: number
-	username?: string
+	  username?: string
     password?: string
     isUserLoggedIn?: boolean
     loginSuccess?: boolean
+    bearer?: string
 }
 
 type CategoryType = "wellness" | "health" | "sport";

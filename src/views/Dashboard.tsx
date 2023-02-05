@@ -10,7 +10,7 @@ import '../styles/Dashboard.css'
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import { styled, useTheme } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import { ChartsCarousel } from '../components/ChartsCarousel'
 import { HabitsCarousel } from '../components/HabitsCarousel'
 import { DatePicker } from '../components/Datepicker'
@@ -31,10 +31,10 @@ export default function Dashboard() {
   const navigate = useNavigate()
   const user = useRecoilValue(userState)
   const isUserLoggedIn = user.isUserLoggedIn
-  
+
   useEffect(() => {
     if(!isUserLoggedIn) navigate('/login')
-  },[])
+  },[isUserLoggedIn])
 
   return (
     <React.Fragment>
