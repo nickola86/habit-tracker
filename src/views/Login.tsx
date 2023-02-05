@@ -37,7 +37,7 @@ export default function Login() {
           setLoginStatus('success')
           setBearer(response.access_token)
           setUser({isUserLoggedIn:true, bearer: response.access_token, ...response.user})
-          navigate("/")
+          navigate('/')
         },
         onError:(error: AxiosError)=>{
             setLoginStatus('fail')

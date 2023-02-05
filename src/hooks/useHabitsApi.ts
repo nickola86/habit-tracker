@@ -15,6 +15,6 @@ export const useHabitsApi = (user: User): IHabitsService => {
   const _user = user
   HabitsApi.default(_user.bearer || "")
   return {
-    getHabits: (): Promise<Habit[]> | [] => {return _user.isUserLoggedIn ? HabitsApi.findByUser(_user.id || 0) : []}
+    getHabits: (): Promise<Habit[]> | [] => {return _user.isUserLoggedIn ? HabitsApi.findByUser(_user.id || 1) : []}
   }
 };

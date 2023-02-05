@@ -67,8 +67,10 @@ export interface Habit {
 }
 
 export interface Chart {
-    title: string,
-    svg: SVGElement,
+  title: string,
+  type: string,
+  data: [],
+  svg?: SVGElement,
 }
 
 type SettingCategoryType = "graphics" | "components";
