@@ -1,5 +1,7 @@
 import { Chart, User } from "../components/types";
 import * as ChartsApi from '../api/ChartsApi'
+import {useRecoilValue} from "recoil";
+import {userState} from "../atoms/userState";
 
 export interface FindAllRequest {
   user: User;
@@ -11,10 +13,11 @@ export interface IChartsService {
   getCharts(): Promise<Chart[]> | [];
 }
 
-export const useChartsApi = (user: User): IChartsService => {
-  const _user = user
-  ChartsApi.default(_user.bearer || "")
+export const useChartsApi = (): IChartsService => {
+  const user:User = useRecoilValue<User>(userState)
+
+  ChartsApi.default(user.bearer || "")
   return {
-    getCharts: (): Promise<Chart[]> | [] => {return _user.isUserLoggedIn ? ChartsApi.findByUser(_user.id || 1) : []}
+    getCharts: (): Promise<Chart[]> | [] => {return user.isUserLoggedIn ? ChartsApi.findByUser(user.id as number) : []}
   }
 };

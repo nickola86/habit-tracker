@@ -8,7 +8,7 @@ import { userState } from '../atoms/userState';
 import {useQuery, UseQueryResult} from 'react-query';
 import {useTranslation} from "react-i18next";
 import {useHabitsApi} from "../hooks/useHabitsApi";
-import {Chart, Habit} from "./types";
+import {Chart, THabit} from "./types";
 import {
     RadialBarChart,
     RadialBar,
@@ -18,10 +18,8 @@ import {
 
 export function ChartsCarousel(props: any)
 {
-    const user = useRecoilValue(userState)
     const { t } = useTranslation();
-
-    const chartsApi = useChartsApi(user)
+    const chartsApi = useChartsApi()
     const getChartsQuery: UseQueryResult<Chart[], Error> = useQuery('getCharts', chartsApi.getCharts)
     if(getChartsQuery.isLoading) return <CircularProgress color="primary" />
     if(getChartsQuery.isError) return <p>{t(getChartsQuery.error.message)}</p>
@@ -47,7 +45,7 @@ export function ChartsCarousel(props: any)
                     </RadialBarChart>
 
                     if(c.type==='LineChart') return <LineChart key={i} style={{margin:'0 auto'}} width={500} height={250} data={c.data}
-                                                               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+                                                               margin={{ top: 5, right: 30, left: 20, bottom: 5 }} title={c.title}>
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="name" />
                         <YAxis />

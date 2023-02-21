@@ -45,14 +45,16 @@ export default function Login() {
             console.log(error)
         },
       })
-  let loginQuery: UseQueryResult<User> | null = null
-  if(typeof bearer !== 'undefined' && bearer !== '') loginQuery = useQuery('getUser',()=>{return LoginApi.getUser(bearer)})
-  useEffect(() => {
-    if(loginQuery !== null && loginQuery.isSuccess && typeof loginQuery.data !== 'undefined'){
-      setUser(loginQuery.data)
-      navigate('/')
-    }
-  },[loginQuery])
+
+  const loginQuery: UseQueryResult<User> = useQuery('getUser',()=>{return LoginApi.getUser(bearer)},
+    {enabled:typeof bearer !== 'undefined' && bearer !== '',
+      onSuccess:(response: User)=>{
+        setLoginStatus('success')
+        setUser({isUserLoggedIn:true, ...response})
+        navigate('/')
+      },
+    })
+
 
   const doLogin = async (event: React.MouseEvent | React.KeyboardEvent | React.ChangeEvent) => {
       event.preventDefault()

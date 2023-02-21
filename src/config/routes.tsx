@@ -6,41 +6,49 @@ import Habit from '../views/Habit';
 import Preferences from '../views/Preferences';
 import Profile from '../views/Profile';
 import Settings from '../views/Settings';
-import { RouteObject } from 'react-router-dom';
+import { HabitTrackerRoute } from '../components/types';
 import Error from '../views/Error';
 
-export const routesConfig: RouteObject[] = [
-    {
-      path: "/",
-      element: <Dashboard />,
-    },
+export const routesConfig: HabitTrackerRoute[] = [
+  {
+    path: "/",
+    element: <Dashboard />,
+    isProtected: true
+  },
     {
       path: "/login",
       element: <Login />,
+      isProtected: false
     },
     {
       path: "/logout",
-      element: <Logout />
+      element: <Logout />,
+      isProtected: true
     },
     {
       path: "/habit/:id?",
-      element: <Habit />
+      element: <Habit />,
+      isProtected: true
     },
     {
       path: "/preferences",
-      element: <Preferences />
+      element: <Preferences />,
+      isProtected: true
     },
     {
       path: "/profile",
-      element: <Profile />
+      element: <Profile />,
+      isProtected: true
     },
     {
       path: "/settings",
-      element: <Settings />
+      element: <Settings />,
+      isProtected: true
     },
     {
       path: "*",
-      element: <Error/>
+      element: <Error/>,
+      isProtected: false
     }
   ];
   

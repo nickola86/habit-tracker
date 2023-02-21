@@ -2,7 +2,7 @@
 VIEWS
 */
 export interface HabitButtonProps {
-  habit: Habit
+  habit: THabit
 }
 export interface BadgeProps {
   icon: string,
@@ -11,8 +11,12 @@ export interface BadgeProps {
 }
 
 export interface HabitsCarouselProps {
-    habits?: Habit[]
-    elementsPerPage: number
+  habits?: THabit[]
+  elementsPerPage: number
+}
+
+export interface MonthCalendarProps {
+  calendarItems: CalendarItem[]
 }
 
 /*
@@ -51,20 +55,29 @@ type CalendarItem = {
     actualValue: number
 }
 
-export interface Habit {
-    id?: number
-	userId?: number
-	icon: string
-	title: string
-	color: string
-	startDate?: Date
-	endDate?: Date
-	reminderMessage?: string
-    category?: CategoryType
-	recurrency?: RecurrencyType
-	goalBase?: GoalBaseType
-	calendar?: CalendarItem[]
+export interface THabit {
+  id?: number
+  userId?: number
+  icon?: string
+  title?: string
+  color?: string
+  startDate?: Date
+  endDate?: Date
+  reminderMessage?: string
+  category?: CategoryType
+  recurrency?: RecurrencyType
+  goalBase?: GoalBaseType
+  calendar?: CalendarItem[]
 }
+
+
+export interface TWidget {
+  id?: number
+  title?: string
+  type?: string
+
+}
+
 
 export interface Chart {
   title: string,
@@ -81,4 +94,12 @@ export interface Setting{
     name: string
     value: any
     category: SettingCategoryType
+}
+
+
+
+export interface HabitTrackerRoute{
+  path: string,
+  element: JSX.Element,
+  isProtected: boolean
 }

@@ -1,52 +1,19 @@
 import * as React from 'react'
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import CssBaseline from '@mui/material/CssBaseline';
-import GlobalStyles from '@mui/material/GlobalStyles';
-import { Theme } from '@mui/material/styles';
-import {routesConfig} from './config/routes';
 import reportWebVitals from './reportWebVitals';
 import { RecoilRoot, useRecoilValue } from 'recoil';
 import './i18n/i18n';
-
-import { QueryClient, QueryClientProvider } from 'react-query'
-import {ReactQueryDevtools} from "react-query/devtools";
-
-import {
-  Route,
-  BrowserRouter as Router,
-  Routes,
-} from "react-router-dom";
-import ResponsiveAppBar from './components/ResponsiveAppBar';
-
-
-const queryClient = new QueryClient()
+import App from "./App";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
       <RecoilRoot>
-        <QueryClientProvider client={queryClient}>
-          <CssBaseline />
-          <GlobalStyles
-            styles={(theme) => ({
-              body: { backgroundColor: "#FFFFFF" },
-            })}
-          />
-          <Router>
-            <ResponsiveAppBar/>
-            <Routes>
-            {
-              routesConfig.map((r,i)=>
-                <Route key={i} path={r.path} element={r.element}/>
-                )
-            }
-            </Routes>
-          </Router>
-          <ReactQueryDevtools/>
-        </QueryClientProvider>
+        <App/>
       </RecoilRoot>
   </React.StrictMode>
 );

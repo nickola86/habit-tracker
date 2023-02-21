@@ -28,13 +28,6 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function Dashboard() {
   const { t } = useTranslation();
-  const navigate = useNavigate()
-  const user = useRecoilValue(userState)
-  const isUserLoggedIn = user.isUserLoggedIn
-
-  useEffect(() => {
-    if(!isUserLoggedIn) navigate('/login')
-  },[isUserLoggedIn])
 
   return (
     <React.Fragment>

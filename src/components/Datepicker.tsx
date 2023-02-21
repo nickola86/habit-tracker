@@ -5,6 +5,9 @@ import { addDays, getMonthName, getShortYear, isSameDate } from '../hooks/useDat
 
 import {useState} from 'react';
 
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+
 export const DatePicker = (props: any) => {
 
     const [dateSelected, setDateSelected] = useState(new Date())
@@ -15,7 +18,7 @@ export const DatePicker = (props: any) => {
 
     return <div className='datepicker-container'>
         <div className="button" onClick={(evt)=>{evt.preventDefault(); setDateSelected(addDays(dateSelected,-4))}}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16"> <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/> </svg>
+            <ChevronLeftIcon />
         </div>
         <div className='calendar'>
             {toggleDatePicker===false ? <p className='month' onClick={(evt)=>{evt.preventDefault(); setToggleDatePicker(!toggleDatePicker)}}>{`${getMonthName(dateSelected)} '${getShortYear(dateSelected)}`}</p> : <p>datepicker</p>}
@@ -24,7 +27,7 @@ export const DatePicker = (props: any) => {
             </div>
         </div>
         <div className={"button " + (addDays(dateSelected,4) > today ? 'disabled' : '')} onClick={(evt)=>{evt.preventDefault(); addDays(dateSelected,4) <= today? setDateSelected(addDays(dateSelected,4)): setDateSelected(today)}}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-right" viewBox="0 0 16 16"> <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/> </svg>
+            <ChevronRightIcon />
         </div>
     </div>;
 }

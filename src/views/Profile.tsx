@@ -5,7 +5,7 @@ import * as React from 'react';
 import ResponsiveAppBar from '../components/ResponsiveAppBar';
 import Box from "@mui/material/Box";
 import {splitListByBlockSize} from "../utils/splitListByBlockSize";
-import {Habit, User, Badge} from "../components/types";
+import {THabit, User, Badge} from "../components/types";
 import {HabitButton} from "../components/HabitButton";
 import Carousel from "react-material-ui-carousel";
 import Paper from "@mui/material/Paper";
@@ -24,12 +24,9 @@ export default function Profile() {
   const badgesApi = useBadgesApi(user)
   const badgesQuery: UseQueryResult<Badge[], Error> = useQuery('getBadges',badgesApi.getBadges)
   const badges: Badge[] = badgesQuery.data || []
-  const navigate = useNavigate()
-  useEffect(()=>{
-    if(!user.isUserLoggedIn) navigate('/login')
-  },[user])
+
   return (
-    <Box sx={{ flexGrow: 1, marginTop:'1em', padding:'1em', maxWidth:'1536px'}}>
+    <Box sx={{ display:'flex', justifyContent:'center', margin:'0 auto', marginTop:'1em', padding:'1em', maxWidth:'1536px'}}>
       <Grid container spacing={1}>
         <Grid item md={12} xs={12} mt={2} display={'flex'} justifyContent={'center'}>
             <Paper>

@@ -1,4 +1,4 @@
-import {Badge, Habit, User} from "../components/types";
+import {Badge, THabit, User} from "../components/types";
 import * as BadgesApi from "../api/BadgesApi";
 
 export interface FindAllRequest {

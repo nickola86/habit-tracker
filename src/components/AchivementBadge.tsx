@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import {BadgeProps, Habit, HabitButtonProps} from './types';
+import {BadgeProps, THabit, HabitButtonProps} from './types';
 import { Typography } from '@mui/material';
 
 import '../styles/HabitButton.css'
