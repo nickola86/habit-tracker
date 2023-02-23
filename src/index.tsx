@@ -1,6 +1,6 @@
 import * as React from 'react'
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './styles/index.css';
 import reportWebVitals from './reportWebVitals';
 import { RecoilRoot, useRecoilValue } from 'recoil';
 import './i18n/i18n';

@@ -7,10 +7,12 @@ import {useState} from 'react';
 
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import {selectedDateState} from "../atoms/selectedDateState";
+import {useRecoilState} from "recoil";
 
 export const DatePicker = (props: any) => {
 
-    const [dateSelected, setDateSelected] = useState(new Date())
+    const [dateSelected, setDateSelected] = useRecoilState(selectedDateState)
     const [toggleDatePicker,setToggleDatePicker] = useState(false)
     const today = new Date()
 

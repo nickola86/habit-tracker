@@ -30,6 +30,13 @@ export const it = {
         DashboardChartsTitle:"Le statistiche dell'ultima settimana",
         DashboardHabitsTitle:"Le mie abitudini",
         "Network Error": "Errore di rete",
-        "Request failed with status code 401": "Utente non autorizzato"
+        "Request failed with status code 401": "Utente non autorizzato",
+        "Mon":"Lun",
+        "Tue":"Mar",
+        "Wed":"Mer",
+        "Thu":"Gio",
+        "Fri":"Ven",
+        "Sat":"Sab",
+        "Sun":"Dom"
     }
 }

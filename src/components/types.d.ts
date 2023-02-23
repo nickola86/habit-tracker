@@ -17,6 +17,7 @@ export interface HabitsCarouselProps {
 
 export interface MonthCalendarProps {
   calendarItems: CalendarItem[]
+  color: string | undefined
 }
 
 /*

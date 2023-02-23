@@ -1,0 +1,38 @@
+.monthpicker-container .calendar .month{
+    font-size: 2vh;
+    font-weight: 600;
+    margin:0;
+    margin-bottom:1em;
+}
+.monthpicker-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+}
+.monthpicker-container div.button,
+.monthpicker-container div.calendar div.date{
+    height:3em;
+    width:3em;
+    margin:.1em;
+    border:1px solid transparent;
+    color: #1976d2;
+    border-radius: 3em;
+    font-weight: 600;
+    padding-top:2px;
+    display:flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    vertical-align: baseline;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+    cursor:pointer;
+    cursor:hand;
+}
+.monthpicker-container div.button.disabled{
+    cursor:default;
+    color: lightgray;
+    border-color: lightgray;
+    box-shadow: none;
+}

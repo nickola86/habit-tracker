@@ -20,11 +20,6 @@ export default function App() {
 
   return <QueryClientProvider client={queryClient}>
     <CssBaseline />
-    <GlobalStyles
-      styles={(theme) => ({
-        body: { backgroundColor: "#FFFFFF" },
-      })}
-    />
     <Router>
         <ResponsiveAppBar/>
         <Routes>
