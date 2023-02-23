@@ -1,5 +1,5 @@
 .monthpicker-container .calendar .month{
-    font-size: 2vh;
+    font-size: calc(16px + (21 - 16) * ((100vw - 300px) / (1600 - 300)));
     font-weight: 600;
     margin:0;
     margin-bottom:1em;
@@ -9,7 +9,7 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-
+    margin-bottom: 1em;
 }
 .monthpicker-container div.button,
 .monthpicker-container div.calendar div.date{

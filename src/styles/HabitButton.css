@@ -3,8 +3,7 @@
     height: 100px;
     display:flex;
     flex-flow:column;
-    align-items:center;
-    justify-content:space-evenly;
+    justify-content:start;
     margin-bottom: 2em;
     margin-left:0.5em;
     margin-right:0.5em;
