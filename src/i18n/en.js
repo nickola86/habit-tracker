@@ -1,7 +1,7 @@
 export const en = {
     translation: {
         language: "English",
-        appName: "BITS OF HABITS",
+        appName: "smartworkingvan",
         logMeIn: "Log me in",
         changeLanguage:'Change Language',
         forgotPassword: "Forgot Password?",

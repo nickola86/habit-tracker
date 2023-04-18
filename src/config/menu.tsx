@@ -2,40 +2,71 @@ import * as React from 'react'
 import HomeIcon from '@mui/icons-material/Home';
 import LoginIcon from '@mui/icons-material/Login';
 import LogoutIcon from '@mui/icons-material/Logout';
-import DashboardIcon from '@mui/icons-material/Dashboard';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import SettingsIcon from '@mui/icons-material/Settings';
+import { AcUnit, AirportShuttle, Bolt, Downloading, FireExtinguisher, LocalFireDepartment, OilBarrel, PropaneTank, Shower, Water, Wc, WhatsApp } from '@mui/icons-material';
 
 export const routes = [{
-  pageName:'Home',
-  path:'/',
+  pageName:'Fridge',
+  path:'#/fridge',
   requiresAuthentication: false,
-  icon:<HomeIcon/>
+  icon:<AcUnit/>
 },{
-  pageName:'Login',
-  path:'/',
+  pageName:'AC Inverter',
+  path:'#/ac-inverter',
   requiresAuthentication: false,
-  icon:<LoginIcon/>
+  icon:<Bolt/>
 },{
-  pageName:'Dashboard',
-  path:'/',
-  requiresAuthentication: true,
-  icon:<DashboardIcon/>
-}]
+  pageName:'Heater',
+  path:'#/heater',
+  requiresAuthentication: false,
+  icon:<LocalFireDepartment/>
+},{
+  pageName:'Toilet',
+  path:'#/toilet',
+  requiresAuthentication: false,
+  icon:<Wc/>
+},{
+  pageName:'Shower',
+  path:'#/shower',
+  requiresAuthentication: false,
+  icon:<Shower/>
+},{
+  pageName:'Gas',
+  path:'#/gas',
+  requiresAuthentication: false,
+  icon:<PropaneTank/>
+},{
+  pageName:'Fire extinguisher',
+  path:'#/fire-extinguisher',
+  requiresAuthentication: false,
+  icon:<FireExtinguisher/>
+},{
+  pageName:'Water refill',
+  path:'#/water-refill',
+  requiresAuthentication: false,
+  icon:<Water/>
+},{
+  pageName:'Water disposal',
+  path:'#/water-disposal',
+  requiresAuthentication: false,
+  icon:<OilBarrel/>
+},{
+  pageName:'Toilet disposal',
+  path:'#/toilet-disposal',
+  requiresAuthentication: false,
+  icon:<Downloading/>
+}
+]
 export const settings = [
 {
-  pageName:'Profile', 
-  path:'/profile',
-  requiresAuthentication: true,
-  icon:<AccountBoxIcon/>
+  pageName:'Goboony', 
+  path:'/goboony',
+  requiresAuthentication: false,
+  icon:<AirportShuttle/>
 },{
-  pageName:'Settings',
-  path:'/settings',
-  requiresAuthentication: true,
-  icon:<SettingsIcon/>
-},{
-  pageName:'Logout',
-  path:'/logout',
-  requiresAuthentication: true,
-  icon:<LogoutIcon/>
+  pageName:'Whatsapp',
+  path:'/whatsapp',
+  requiresAuthentication: false,
+  icon:<WhatsApp/>
 }]

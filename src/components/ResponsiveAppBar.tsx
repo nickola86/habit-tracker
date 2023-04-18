@@ -21,6 +21,7 @@ import { userState } from '../atoms/userState';
 import { useTranslation } from 'react-i18next';
 
 import { Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import { AirportShuttle } from '@mui/icons-material';
 
 function ResponsiveAppBar() {
 
@@ -78,7 +79,7 @@ function ResponsiveAppBar() {
   const appSettings = settings.filter(r=>r.requiresAuthentication===isUserLoggedIn)
 
   return (
-    <AppBar position="static" style={{ background: '#ffffff' }}>
+    <AppBar position="fixed" style={{ background: '#ffffff' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <IconButton
@@ -89,7 +90,7 @@ function ResponsiveAppBar() {
             onClick={handleOpenUserMenu}
             color="default"
           >
-             {isUserLoggedIn && <MenuIcon />}
+            <MenuIcon/>
           </IconButton>        
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <Menu
@@ -138,7 +139,7 @@ function ResponsiveAppBar() {
             {t('appName')}
           </Typography>
 
-          {!isUserLoggedIn && <Box sx={{ flexGrow: 0}}>
+          {<Box sx={{ flexGrow: 0}}>
             <Tooltip title={t('changeLanguage')}>
               <IconButton onClick={handleOpenLangMenu} sx={{ p: 0 }}>
                 <Avatar alt={i18n.language} src={`/static/images/flags/${i18n.language}.svg`} />
@@ -169,7 +170,7 @@ function ResponsiveAppBar() {
           </Box>
           }
 
-          {isUserLoggedIn && <Box sx={{ flexGrow: 0 , marginLeft:"1em"}}>
+          {<Box sx={{ flexGrow: 0 , marginLeft:"1em"}}>
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
@@ -200,7 +201,7 @@ function ResponsiveAppBar() {
             </Menu>
           </Box>}
 
-          {isUserLoggedIn && <Drawer
+          {<Drawer
             anchor="left"
             open={isDrawerOpen}
             onClose={()=>setDrawerOpen(false)}
@@ -210,7 +211,6 @@ function ResponsiveAppBar() {
                 <ChevronLeftIcon />
               </IconButton>
             </DrawerHeader>
-            <Divider />
             <List>
             {appRoutes.map((s) => (
                 <ListItem key={s.pageName} disablePadding onClick={()=>handleCloseNavMenuAndGo(s.path)}>
@@ -226,17 +226,16 @@ function ResponsiveAppBar() {
             <Divider/>
             <List>
             {appSettings.map((s) => (
-              <ListItem key={s.pageName} disablePadding onClick={()=>handleCloseNavMenuAndGo(s.path)}>
-              <ListItemButton>
-                <ListItemIcon>
-                  {s.icon}
-                </ListItemIcon>
-                <ListItemText primary={t(s.pageName)} />
-              </ListItemButton>
-            </ListItem>
+                <ListItem key={s.pageName} disablePadding onClick={()=>handleCloseNavMenuAndGo(s.path)}>
+                <ListItemButton>
+                  <ListItemIcon>
+                    {s.icon}
+                  </ListItemIcon>
+                  <ListItemText primary={t(s.pageName)} />
+                </ListItemButton>
+              </ListItem>
             ))}
             </List>
-            <Divider/>
           </Drawer>}
 
           {isUserLoggedIn && 

@@ -8,10 +8,11 @@ import Profile from '../views/Profile';
 import Settings from '../views/Settings';
 import { HabitTrackerRoute } from '../components/types';
 import Error from '../views/Error';
+import Ciro from '../views/Ciro';
 
 export const routesConfig: HabitTrackerRoute[] = [
   {
-    path: "/",
+    path: "/dashboard",
     element: <Dashboard />,
     isProtected: true
   },
@@ -44,6 +45,11 @@ export const routesConfig: HabitTrackerRoute[] = [
       path: "/settings",
       element: <Settings />,
       isProtected: true
+    },
+    {
+      path: "/",
+      element: <Ciro />,
+      isProtected: false 
     },
     {
       path: "*",

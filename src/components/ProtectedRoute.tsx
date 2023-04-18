@@ -24,5 +24,5 @@ export default function ProtectedRoute(props: any){
   if(!isUserLoggedIn && loginQuery.isLoading) return <CircularProgress/>
   if(!isUserLoggedIn && loginQuery.isError) return <Navigate to="/error"/>
   if(isUserLoggedIn && loginQuery.isSuccess) return props.children
-  else return <Navigate to="/login"/>
+  else return <Navigate to="/"/>
 };
