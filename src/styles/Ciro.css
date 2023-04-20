@@ -17,3 +17,10 @@
   .img-gradient img{
     display:block;
   }
+  p{
+    color: #333;
+  }
+  h1{
+    color: #333;
+    text-decoration: underline;
+  }

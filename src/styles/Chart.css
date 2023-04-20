@@ -1,7 +1,0 @@
-.dashboard-container .carousel-theme{
-    overflow:visible;
-}
-.dashboard-container .carousel-theme .MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiCard-root.chart-card{
-    border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
-}

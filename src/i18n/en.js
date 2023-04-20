@@ -1,5 +1,5 @@
 export const en = {
-    translation: {
+    translations: {
         language: "English",
         appName: "smartworkingvan",
         logMeIn: "Log me in",

@@ -1,64 +1,79 @@
 import * as React from 'react'
-import HomeIcon from '@mui/icons-material/Home';
-import LoginIcon from '@mui/icons-material/Login';
-import LogoutIcon from '@mui/icons-material/Logout';
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
-import SettingsIcon from '@mui/icons-material/Settings';
-import { AcUnit, AirportShuttle, Bolt, Downloading, FireExtinguisher, LocalFireDepartment, OilBarrel, PropaneTank, Shower, Water, Wc, WhatsApp } from '@mui/icons-material';
+import { AcUnit, AirportShuttle, Bolt, Downloading, FireExtinguisher, Home, LocalFireDepartment, OilBarrel, PropaneTank, Shower, Water, Wc, WhatsApp } from '@mui/icons-material';
+import Fridge from '../components/Fridge';
+import Ciro from '../views/Ciro';
+import Base from '../components/Base';
 
 export const routes = [{
-  pageName:'Fridge',
-  path:'#/fridge',
+  pageName:'Home',
+  path:'/',
   requiresAuthentication: false,
-  icon:<AcUnit/>
+  element: <Ciro/>,
+  icon: <Home />,
+  isHomePage: true
+},{
+  pageName:'Fridge',
+  path:'fridge',
+  requiresAuthentication: false,
+  icon:<AcUnit/>,
+  element: <Fridge/>
 },{
   pageName:'AC Inverter',
-  path:'#/ac-inverter',
+  path:'/ac-inverter',
   requiresAuthentication: false,
-  icon:<Bolt/>
+  icon:<Bolt/>,
+  element:<Base/>
 },{
   pageName:'Heater',
-  path:'#/heater',
+  path:'/heater',
   requiresAuthentication: false,
-  icon:<LocalFireDepartment/>
+  icon:<LocalFireDepartment/>,
+  element: <Base/>
 },{
   pageName:'Toilet',
-  path:'#/toilet',
+  path:'/toilet',
   requiresAuthentication: false,
-  icon:<Wc/>
+  icon:<Wc/>,
+  element: <Base/>
 },{
   pageName:'Shower',
-  path:'#/shower',
+  path:'/shower',
   requiresAuthentication: false,
-  icon:<Shower/>
+  icon:<Shower/>,
+  element: <Base/>
 },{
   pageName:'Gas',
-  path:'#/gas',
+  path:'/gas',
   requiresAuthentication: false,
-  icon:<PropaneTank/>
+  icon:<PropaneTank/>,
+  element: <Base/>
 },{
   pageName:'Fire extinguisher',
-  path:'#/fire-extinguisher',
+  path:'/fire-extinguisher',
   requiresAuthentication: false,
-  icon:<FireExtinguisher/>
+  icon:<FireExtinguisher/>,
+  element: <Base/>
 },{
   pageName:'Water refill',
-  path:'#/water-refill',
+  path:'/water-refill',
   requiresAuthentication: false,
-  icon:<Water/>
+  icon:<Water/>,
+  element: <Base/>
 },{
   pageName:'Water disposal',
-  path:'#/water-disposal',
+  path:'/water-disposal',
   requiresAuthentication: false,
-  icon:<OilBarrel/>
+  icon:<OilBarrel/>,
+  element: <Base/>
 },{
   pageName:'Toilet disposal',
-  path:'#/toilet-disposal',
+  path:'/toilet-disposal',
   requiresAuthentication: false,
-  icon:<Downloading/>
+  icon:<Downloading/>,
+  element: <Base/>
 }
 ]
-export const settings = [
+export const externalLinks = [
 {
   pageName:'Goboony', 
   path:'/goboony',

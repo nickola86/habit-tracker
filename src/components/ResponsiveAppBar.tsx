@@ -15,7 +15,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import { useNavigate } from "react-router-dom";
-import { routes, settings } from '../config/menu';
+import { routes, externalLinks } from '../config/menu';
 import { useRecoilValue } from 'recoil';
 import { userState } from '../atoms/userState';
 import { useTranslation } from 'react-i18next';
@@ -75,10 +75,11 @@ function ResponsiveAppBar() {
     i18n.changeLanguage(lang)
   }
 
-  const appRoutes = routes.filter(r=>r.requiresAuthentication===isUserLoggedIn)
-  const appSettings = settings.filter(r=>r.requiresAuthentication===isUserLoggedIn)
+  const appRoutes = routes.filter(r=>r.requiresAuthentication===isUserLoggedIn && r.isHomePage!==true)
+  const appLinks = externalLinks.filter(r=>r.requiresAuthentication===isUserLoggedIn)
 
   return (
+    <>
     <AppBar position="fixed" style={{ background: '#ffffff' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -120,13 +121,13 @@ function ResponsiveAppBar() {
             </Menu>
           </Box>
           <Typography
-            variant="h5"
+            variant="h6"
             noWrap
             component="a"
             href=""
             sx={{
-              mr: 2,
-              ml:1,
+              mr: 1,
+              ml:0,
               display: { xs: 'flex', md: 'flex' },
               flexGrow: 1,
               fontFamily: 'monospace',
@@ -141,8 +142,8 @@ function ResponsiveAppBar() {
 
           {<Box sx={{ flexGrow: 0}}>
             <Tooltip title={t('changeLanguage')}>
-              <IconButton onClick={handleOpenLangMenu} sx={{ p: 0 }}>
-                <Avatar alt={i18n.language} src={`/static/images/flags/${i18n.language}.svg`} />
+              <IconButton onClick={handleOpenLangMenu} sx={{ p: 0, m:0}}>
+                <Avatar   sx={{ width: 24, height: 24 }} alt={i18n.language} src={`/static/images/flags/${i18n.language}.svg`} />
               </IconButton>
             </Tooltip>
             <Menu
@@ -193,7 +194,7 @@ function ResponsiveAppBar() {
                   </MenuItem>
               ))}
               <hr/>
-              {appSettings.map((s) => (
+              {externalLinks.map((s) => (
                   <MenuItem key={s.pageName} onClick={()=>handleCloseNavMenuAndGo(s.path)}>
                     <Typography textAlign="center">{t(s.pageName)}</Typography>
                   </MenuItem>
@@ -225,7 +226,7 @@ function ResponsiveAppBar() {
             </List>
             <Divider/>
             <List>
-            {appSettings.map((s) => (
+            {externalLinks.map((s) => (
                 <ListItem key={s.pageName} disablePadding onClick={()=>handleCloseNavMenuAndGo(s.path)}>
                 <ListItemButton>
                   <ListItemIcon>
@@ -254,6 +255,11 @@ function ResponsiveAppBar() {
         </Toolbar>
       </Container>
     </AppBar>
+    {
+      //second <Toolbar/> trick - avoid affix-top issues
+    }
+    <Toolbar />
+    </>
   );
 }
 export default ResponsiveAppBar;

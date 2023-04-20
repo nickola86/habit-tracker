@@ -1,9 +1,6 @@
 import * as React from 'react'
-import {ReactQueryDevtools} from "react-query/devtools";
 import CssBaseline from '@mui/material/CssBaseline';
-import GlobalStyles from '@mui/material/GlobalStyles';
-import { Theme } from '@mui/material/styles';
-import {routesConfig} from './config/routes';
+import {routes} from './config/menu';
 import { QueryClient, QueryClientProvider } from 'react-query'
 import {
   Route,
@@ -11,25 +8,28 @@ import {
   Routes,
 } from "react-router-dom";
 import ResponsiveAppBar from './components/ResponsiveAppBar';
-import {userState} from "./atoms/userState";
 import ProtectedRoute from "./components/ProtectedRoute";
+import { I18nextProvider, useTranslation } from 'react-i18next';
 
 export default function App() {
 
   const queryClient = new QueryClient()
-
+  const {t,i18n} = useTranslation();
+  
   return <QueryClientProvider client={queryClient}>
     <CssBaseline />
+    <I18nextProvider i18n={i18n}>
     <Router>
         <ResponsiveAppBar/>
         <Routes>
           {
-            routesConfig.map((r,i)=>
-              <Route key={i} path={r.path} element={r.isProtected ? <ProtectedRoute>{r.element}</ProtectedRoute> : <>{r.element}</>} />
+            routes.map((r,i)=>
+              <Route key={i} path={r.path} element={r.requiresAuthentication ? <ProtectedRoute>{r.element}</ProtectedRoute> : <>{r.element}</>} />
             )
           }
         </Routes>
     </Router>
+    </I18nextProvider>
   </QueryClientProvider>
 
 }
