@@ -1,6 +1,6 @@
 import * as React from 'react'
 import CssBaseline from '@mui/material/CssBaseline';
-import {routes} from './config/menu';
+import {routes, externalLinks} from './config/menu';
 import { QueryClient, QueryClientProvider } from 'react-query'
 import {
   Route,

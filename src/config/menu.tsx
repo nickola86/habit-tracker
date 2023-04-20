@@ -85,12 +85,14 @@ export const routes = [{
 export const externalLinks = [
 {
   pageName:'Goboony', 
-  path:'https://www.goboony.it/campers/italia/sardegna/iglesias/43288',
+  path:'/goboony',
+  externalUrl: 'https://www.goboony.it/campers/italia/sardegna/iglesias/43288',
   requiresAuthentication: false,
   icon:<AirportShuttle/>
 },{
   pageName:'Whatsapp',
-  path:'https://wa.me/+393513531335',
+  path:'/whatsapp',
+  externalUrl: 'https://wa.me/+393513531335',
   requiresAuthentication: false,
   icon:<WhatsApp/>
 }]

@@ -22,6 +22,7 @@ import { useTranslation } from 'react-i18next';
 
 import { Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import { AirportShuttle, Home } from '@mui/icons-material';
+import FabContactUs from './FabContactUs';
 
 function ResponsiveAppBar() {
 
@@ -199,7 +200,7 @@ function ResponsiveAppBar() {
               ))}
               <hr/>
               {externalLinks.map((s) => (
-                  <MenuItem key={s.pageName} onClick={()=>navigateToBlank(s.path)}>
+                  <MenuItem key={s.pageName} onClick={()=>navigateToBlank(s.externalUrl)}>
                     <Typography textAlign="center">{t(s.pageName)}</Typography>
                   </MenuItem>
               ))}
@@ -240,7 +241,7 @@ function ResponsiveAppBar() {
             <Divider/>
             <List>
             {externalLinks.map((s) => (
-                <ListItem key={s.pageName} disablePadding onClick={()=>navigateToBlank(s.path)}>
+                <ListItem key={s.pageName} disablePadding onClick={()=>navigateToBlank(s.externalUrl)}>
                 <ListItemButton>
                   <ListItemIcon>
                     {s.icon}
@@ -272,6 +273,7 @@ function ResponsiveAppBar() {
       //second <Toolbar/> trick - avoid affix-top issues
     }
     <Toolbar />
+    <FabContactUs></FabContactUs>
     </>
   );
 }

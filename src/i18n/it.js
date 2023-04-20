@@ -15,6 +15,9 @@ export const it = {
         "Water disposal":"Scarico acqua",
         "Toilet disposal":"Scarico bagno",
         "Goboony":"Goboony",
-        "Whatsapp":"Whatsapp"
+        "Whatsapp":"Whatsapp",
+        "Contact us": "Contattaci",
+        "How to turn on": "Come si accende",
+        "How to turn off": "Come si spegne",
     }
 }
