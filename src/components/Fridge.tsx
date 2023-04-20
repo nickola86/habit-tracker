@@ -6,6 +6,7 @@ import Image from './Image';
 export default function Fridge(){    
     const { t, i18n } = useTranslation();
     const Item = <></>
+    const basepath="/static/images/fridge/smartworkingvan-camper-fridge-";
     return <div className='page-base'>
         <h1>{t('Fridge')}</h1>
         <Trans>
@@ -14,7 +15,7 @@ export default function Fridge(){
         <h2>{t('How to turn on')}</h2>
         <Grid container spacing={2}>
         <Grid item xs={12} md={12}>
-                <Image path='/static/images/fridge/1.jpg'/> 
+                <Image path={`${basepath}1.jpg`}/> 
             </Grid>
             <Grid item xs={12} md={12}>
                 <Trans>
@@ -22,7 +23,7 @@ export default function Fridge(){
                 </Trans>
             </Grid>
             <Grid item xs={12} md={12}>
-                <Image path='/static/images/fridge/2.jpg'/> 
+                <Image path={`${basepath}2.jpg`}/> 
             </Grid>
             <Grid item xs={12} md={12}>
                 <Trans>
@@ -30,15 +31,15 @@ export default function Fridge(){
                 </Trans>
             </Grid>                       
             <Grid item xs={12} md={12}>
-                <Image path='/static/images/fridge/3.jpg'/> 
+                <Image path={`${basepath}3.jpg`}/> 
             </Grid>
             <Grid item xs={12} md={12}>
                 <Trans>
                     Tieni premuti entrambi i pulsanti finchè l'indicatore a destra si sposta sulla zona verde.
                 </Trans>
             </Grid>                       
-            <Grid item xs={12} md={12}>
-                <Image path='/static/images/fridge/4.jpg'/> 
+            <Grid item xs={12} md={12}> 
+                <Image path={`${basepath}4.jpg`}/> 
             </Grid>
             <Grid item xs={12} md={12}>
                 <Trans>
