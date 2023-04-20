@@ -14,18 +14,24 @@ import WaterDisposal from '../components/WaterDisposal';
 import ToiletDisposal from '../components/ToiletDisposal';
 
 export const routes = [{
-  pageName:'Home',
+  pageName:'Smartworkingvan',
   path:'/',
   requiresAuthentication: false,
   element: <Ciro/>,
   icon: <Home />,
   isHomePage: true
 },{
-  pageName:'Fridge',
+  pageName:'Frigo',
   path:'fridge',
   requiresAuthentication: false,
   icon:<AcUnit/>,
   element: <Fridge/>
+},{
+  pageName:'Stufa',
+  path:'/heater',
+  requiresAuthentication: false,
+  icon:<LocalFireDepartment/>,
+  element: <Heater/>
 },{
   pageName:'AC Inverter',
   path:'/ac-inverter',
@@ -33,51 +39,45 @@ export const routes = [{
   icon:<Bolt/>,
   element:<ACInverter/>
 },{
-  pageName:'Heater',
-  path:'/heater',
-  requiresAuthentication: false,
-  icon:<LocalFireDepartment/>,
-  element: <Heater/>
-},{
-  pageName:'Toilet',
+  pageName:'Bagno',
   path:'/toilet',
-  requiresAuthentication: false,
+  requiresAuthentication: true,
   icon:<Wc/>,
   element: <Toilet/>
 },{
-  pageName:'Shower',
+  pageName:'Doccia',
   path:'/shower',
-  requiresAuthentication: false,
+  requiresAuthentication: true,
   icon:<ShowerIcon/>,
   element: <Shower/>
 },{
   pageName:'Gas',
   path:'/gas',
-  requiresAuthentication: false,
+  requiresAuthentication: true,
   icon:<PropaneTank/>,
   element: <Gas/>
 },{
-  pageName:'Fire extinguisher',
+  pageName:'Estintore',
   path:'/fire-extinguisher',
-  requiresAuthentication: false,
+  requiresAuthentication: true,
   icon:<FireExtinguisherIcon/>,
   element: <FireExtinguisher />
 },{
-  pageName:'Water refill',
+  pageName:'Carico acqua',
   path:'/water-refill',
-  requiresAuthentication: false,
+  requiresAuthentication: true,
   icon:<Water/>,
   element: <WaterRefill/>
 },{
-  pageName:'Water disposal',
+  pageName:'Scarico acqua',
   path:'/water-disposal',
-  requiresAuthentication: false,
+  requiresAuthentication: true,
   icon:<OilBarrel/>,
   element: <WaterDisposal/>
 },{
-  pageName:'Toilet disposal',
+  pageName:'Scarico bagno',
   path:'/toilet-disposal',
-  requiresAuthentication: false,
+  requiresAuthentication: true,
   icon:<Downloading/>,
   element: <ToiletDisposal/>
 }

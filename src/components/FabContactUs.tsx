@@ -11,6 +11,6 @@ export default function FabContactUs(){
     }
     return <Fab onClick={handler} variant="extended" style={{backgroundColor:'white',position:'fixed',zIndex:10,bottom:'2em',right:'2em'}}>
     <WhatsApp sx={{ mr: 1 }} />
-    {t('Contact us')}
+    {t('Contattaci')}
 </Fab>
 }
