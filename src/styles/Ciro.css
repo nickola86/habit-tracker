@@ -17,10 +17,13 @@
   .img-gradient img{
     display:block;
   }
-  p{
+  .page-base{
+    margin: 1em;
+  }
+  .page-base p{
     color: #333;
   }
-  h1{
+  .page-base h1{
     color: #333;
     text-decoration: underline;
   }

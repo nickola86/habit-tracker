@@ -12,11 +12,9 @@ export default function Ciro() {
       <div className={'img-gradient'}>
         <img width="100%" src={`/static/images/foto.jpg`} />
       </div>
-      <Grid p={1}>
       {
         appRoutes.map(r=>r.element)
       }
-      </Grid>
     </div>
   );
 }

@@ -14,14 +14,14 @@ import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { routes, externalLinks } from '../config/menu';
 import { useRecoilValue } from 'recoil';
 import { userState } from '../atoms/userState';
 import { useTranslation } from 'react-i18next';
 
 import { Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
-import { AirportShuttle } from '@mui/icons-material';
+import { AirportShuttle, Home } from '@mui/icons-material';
 
 function ResponsiveAppBar() {
 
@@ -54,6 +54,10 @@ function ResponsiveAppBar() {
     setAnchorElLang(event.currentTarget);
   };
 
+
+  const navigateToBlank = (path: string)=>{
+    window.open(path,"_blank");
+  }
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
@@ -143,7 +147,7 @@ function ResponsiveAppBar() {
           {<Box sx={{ flexGrow: 0}}>
             <Tooltip title={t('changeLanguage')}>
               <IconButton onClick={handleOpenLangMenu} sx={{ p: 0, m:0}}>
-                <Avatar   sx={{ width: 24, height: 24 }} alt={i18n.language} src={`/static/images/flags/${i18n.language}.svg`} />
+                <Avatar  sx={{ width: 32, height: 32, marginRight:'1em' }} alt={i18n.language} src={`/static/images/flags/${i18n.language}.svg`} />
               </IconButton>
             </Tooltip>
             <Menu
@@ -195,7 +199,7 @@ function ResponsiveAppBar() {
               ))}
               <hr/>
               {externalLinks.map((s) => (
-                  <MenuItem key={s.pageName} onClick={()=>handleCloseNavMenuAndGo(s.path)}>
+                  <MenuItem key={s.pageName} onClick={()=>navigateToBlank(s.path)}>
                     <Typography textAlign="center">{t(s.pageName)}</Typography>
                   </MenuItem>
               ))}
@@ -207,11 +211,20 @@ function ResponsiveAppBar() {
             open={isDrawerOpen}
             onClose={()=>setDrawerOpen(false)}
           >
-            <DrawerHeader>
+            <DrawerHeader style={{padding:0}}>
+              <ListItem disablePadding onClick={()=>handleCloseNavMenuAndGo('/')}>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <Home />
+                  </ListItemIcon>
+                  <ListItemText primary={t('Smartworkingvan')} />
+                </ListItemButton>
+              </ListItem>
               <IconButton onClick={()=>setDrawerOpen(false)}>
                 <ChevronLeftIcon />
               </IconButton>
             </DrawerHeader>
+            <Divider/>
             <List>
             {appRoutes.map((s) => (
                 <ListItem key={s.pageName} disablePadding onClick={()=>handleCloseNavMenuAndGo(s.path)}>
@@ -227,7 +240,7 @@ function ResponsiveAppBar() {
             <Divider/>
             <List>
             {externalLinks.map((s) => (
-                <ListItem key={s.pageName} disablePadding onClick={()=>handleCloseNavMenuAndGo(s.path)}>
+                <ListItem key={s.pageName} disablePadding onClick={()=>navigateToBlank(s.path)}>
                 <ListItemButton>
                   <ListItemIcon>
                     {s.icon}

@@ -15,7 +15,7 @@ export default function App() {
 
   const queryClient = new QueryClient()
   const {t,i18n} = useTranslation();
-  
+
   return <QueryClientProvider client={queryClient}>
     <CssBaseline />
     <I18nextProvider i18n={i18n}>
