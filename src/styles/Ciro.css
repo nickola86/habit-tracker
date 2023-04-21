@@ -41,3 +41,22 @@
     letter-spacing: 0.1px;
     font-weight: 600;
   }
+
+  fakebody {
+    background-color: #ffffff;
+    animation-name: pulsecolor;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes pulsecolor {
+    0% {
+      background-color: #ffffff;
+    }
+    50% {
+      background-color: #ffa5f4;
+    }
+    100% {
+      background-color: #ffffff;
+    }
+  }

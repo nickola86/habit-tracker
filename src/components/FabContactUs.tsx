@@ -9,7 +9,7 @@ export default function FabContactUs(){
         const wa = externalLinks.find(l=>l.path==='/whatsapp')
         !!wa && window.open(wa.externalUrl,"_blank");
     }
-    return <Fab onClick={handler} variant="extended" style={{backgroundColor:'white',position:'fixed',zIndex:10,bottom:'2em',right:'2em'}}>
+    return <Fab onClick={handler} variant="extended" style={{backgroundColor:'white',position:'fixed',zIndex:10,bottom:'2em',right:'1em'}}>
     <WhatsApp sx={{ mr: 1 }} />
     {t('Contattaci')}
 </Fab>

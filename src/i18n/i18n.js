@@ -8,6 +8,7 @@ i18n.use(languageDetector)
 .use(initReactI18next)
   .init({
     debug: true,
+    default: "en",
     resources:{
       it,
       en,

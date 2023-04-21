@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Habit tracker app"
+      content="Smartworkingvan app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
@@ -32,7 +32,52 @@
             rel="stylesheet"
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>smartworkingvan</title>
+    <style>
+      body{
+        margin:0;
+        padding:0;
+        border:0;
+        font-family: "IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+        font-weight: 400;
+        color: var(--muidocs-palette-grey-900, #1A2027);
+      }
+      #footer{
+        background: #343A40;
+        text-align: center;
+        z-index: 10;
+        padding: 10px 0 10px 0;
+        color: #f8f9fa;
+    }
+    #footer p.copyright a {
+      color: #6DEAFF;
+      font-weight: 700;
+    }
+    #footer .social {
+      margin-bottom: 2em;
+    }
+    #footer .social a {
+      padding: 0 5px;
+      text-decoration: none;
+      -webkit-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+    }
+    #footer .social a i.fa-brands {
+      font-size: 1.1rem;
+      color: #F5F5F5;
+    }
+    #footer #copyright{
+      white-space: nowrap;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+      background-color: transparent;
+    }
+
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -47,5 +92,21 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+      <footer id="footer">
+        <p class="copyright">Made with
+            <i class="fa fa-heart"></i> By
+      <a target="_blank" title="Zeska" href="http://instagram.com/zeska_francesca">Zeska</a> &amp;
+            <a target="_blank" title="Nico" href="http://instagram.com/nicola.di.trani">Nico</a>
+            <span id="copyright">© 2023 all rights reserved</span>
+        </p>
+        <div class="social">
+            <a traget="_blank" href="https://facebook.com/smartworkingvan" title="facebook">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a traget="_blank" href="https://instagram.com/smartworkingvan" title="facebook">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+    </footer>
   </body>
 </html>
