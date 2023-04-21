@@ -11,7 +11,7 @@ export default function ACInverter(){
         <Trans>
             L'inverter produce la corrente necessaria ad alimentare gli apparecchi elettrici che funzionano ad alta tensione trasformando l'energia elettrica contenuta nelle batterie servizi del camper.
         </Trans>
-        <h2>{t('How to turn on')}</h2>
+        <h2>{t('Come si accende')}</h2>
         <Grid container spacing={2}>
             <Grid item xs={12} md={12}>
                 <Image path={`${basepath}2.jpg`}/> 
@@ -22,7 +22,7 @@ export default function ACInverter(){
                 </Trans>
             </Grid>
         </Grid>
-        <h2>{t('How to turn off')}</h2>
+        <h2>{t('Come si spegne')}</h2>
         <Grid container spacing={2}>
             <Grid item xs={12} md={12}>
                 <Image path={`${basepath}1.jpg`}/> 
@@ -33,7 +33,7 @@ export default function ACInverter(){
                 </Trans>
             </Grid>                       
         </Grid>
-        <h2>{t('Connect to external power supply')}</h2>
+        <h2>{t('Collegamento alla rete elettrica esterna')}</h2>
         <Grid container spacing={2}>  
             <Grid item xs={12} md={12}>                     
                 <Alert severity="warning"  style={{margin:'1em auto'}}><Trans>Non accendere l'inverter quando si è collegati alla rete elettrica esterna.</Trans></Alert>

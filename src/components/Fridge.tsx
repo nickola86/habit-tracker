@@ -12,7 +12,7 @@ export default function Fridge(){
         <Trans>
             Il frigo è trivalente, questo vuol dire che può essere alimentato a gas se si &egrave; a veicolo fermo, con corrente elettrica 12v se si &egrave; a veicolo in movimento, con corrente elettrica 220v se si &egrave; nei campeggi connessi alla rete elettrica.
         </Trans>
-        <h2>{t('Come accendere')}</h2>
+        <h2>{t('Come si accende')}</h2>
         <Grid container spacing={2}>
         <Grid item xs={12} md={12}>
                 <Image path={`${basepath}1.jpg`}/> 
@@ -47,7 +47,7 @@ export default function Fridge(){
                 </Trans>
             </Grid>                       
         </Grid>
-        <h2>{t('Come spegnere')}</h2>
+        <h2>{t('Come si spegne')}</h2>
         <Grid container spacing={2}>
             <Grid item xs={12} md={12}>
                 <Trans>

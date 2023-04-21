@@ -18,7 +18,7 @@ export default function Heater(){
                 <Image path={`${basepath}1.jpg`}/> 
             </Grid>
         </Grid>
-        <h2>{t('Come accendere')}</h2>
+        <h2>{t('Come si accende')}</h2>
         <Grid container spacing={2}>
             <Grid item xs={12} md={12}>
                 <Trans>
@@ -39,14 +39,14 @@ export default function Heater(){
             </Grid>
             <Grid item xs={12} md={12}>
                 <Alert severity="warning" style={{margin:'1em auto'}}>
-                    Se la finestra è aperta la stufa non si accende, si tratta di una misura di sicurezza per evitare che i fumi della combustione rientrino nel veicolo dalla finestra. Chiudere quindi la finestra prima di accendere la stufa.
+                    <Trans>Se la finestra è aperta la stufa non si accende, si tratta di una misura di sicurezza per evitare che i fumi della combustione rientrino nel veicolo dalla finestra. Chiudere quindi la finestra prima di accendere la stufa.</Trans>
                 </Alert>
             </Grid>
             <Grid item xs={12} md={12}>
                 <Image path={`${basepath}3.jpg`}/> 
             </Grid>
         </Grid>
-        <h2>{t('Come spegnere')}</h2>
+        <h2>{t('Come si spegne')}</h2>
         <Grid container spacing={2}>
             <Grid item xs={12} md={12}>
                 <Trans>

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { AcUnit, AirportShuttle, Bolt, Downloading, FireExtinguisher as FireExtinguisherIcon, Home, Instagram, LocalFireDepartment, OilBarrel, PropaneTank, Shower as ShowerIcon, Water, Wc, WhatsApp } from '@mui/icons-material';
+import { AcUnit, AirportShuttle, Bolt, Downloading, Facebook, FireExtinguisher as FireExtinguisherIcon, Home, Instagram, LocalFireDepartment, OilBarrel, PropaneTank, Shower as ShowerIcon, Water, Wc, WhatsApp } from '@mui/icons-material';
 import Fridge from '../components/Fridge';
 import Ciro from '../views/Ciro';
 import Base from '../components/Base';
@@ -101,4 +101,10 @@ export const externalLinks = [
   externalUrl: 'https://www.instagram.com/smartworkingvan/',
   requiresAuthentication: false,
   icon:<Instagram/>
+},{
+  pageName:'Facebook',
+  path:'/facebook',
+  externalUrl: 'https://facebook.com/smartworkingvan',
+  requiresAuthentication: false,
+  icon:<Facebook/>
 }]
