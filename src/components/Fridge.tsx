@@ -2,8 +2,10 @@ import { Grid } from '@mui/material';
 import * as React from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import Image from './Image';
+import ReactGA from "react-ga4";
 
 export default function Fridge(){    
+
     const { t, i18n } = useTranslation();
     const Item = <></>
     const basepath="/static/images/fridge/smartworkingvan-camper-fridge-";

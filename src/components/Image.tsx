@@ -8,6 +8,6 @@ export default function Image(props:any) {
         minHeight:'100px',
         minWidth:'100px',
         maxWidth:'800px',
-    }} width="100%" src={props.path}/>
+    }} width="100%" src={props.path} loading="lazy"/>
     </div>
 }

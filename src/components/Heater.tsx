@@ -2,8 +2,10 @@ import * as React from 'react'
 import { Grid,Alert } from '@mui/material';
 import { Trans, useTranslation } from 'react-i18next';
 import Image from './Image';
+import ReactGA from 'react-ga4'
 
 export default function Heater(){    
+
     const { t, i18n } = useTranslation();
     const basepath="/static/images/heater/smartworkingvan-truma-combi-";
     return <div className='page-base'>

@@ -6,9 +6,11 @@ import { Fab } from '@mui/material';
 import { Phone, WhatsApp } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import FabContactUs from '../components/FabContactUs';
-
+import ReactGA from "react-ga4";
 
 export default function Ciro() {
+
+  ReactGA.send({ hitType: "pageview", page: window.location.pathname});
   
   const appRoutes = routes.filter(r=>r.requiresAuthentication===false && r.isHomePage!==true)
 
