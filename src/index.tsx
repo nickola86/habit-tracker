@@ -7,6 +7,7 @@ import App from "./App";
 import { I18nextProvider } from 'react-i18next';
 import './i18n/i18n';
 import ReactGA from 'react-ga4'
+import Footer from './components/Footer';
 
 ReactGA.initialize("G-5V3F849KSL");
 
@@ -18,6 +19,7 @@ root.render(
   <React.StrictMode>
       <RecoilRoot>
         <App/>
+        <Footer />
       </RecoilRoot>
   </React.StrictMode>
 );

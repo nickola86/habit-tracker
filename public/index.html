@@ -85,22 +85,98 @@
       background-color: transparent;
     }
 
+      
+  @keyframes pulsecolor {
+    0% {
+      background-color: #ffeeff;
+    }
+    50% {
+      background-color: #ffaaff;
+    }
+    100% {
+      background-color: #ffeeff;
+    }
+  }
+
+  div.pink-pulse {
+    display: inline-block;
+    background-color: #ffeeff;
+    animation-name: pulsecolor;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    width: 100%;
+    min-height: 100%;
+    }
+
+    .lds-ripple {
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  margin: 40px 0 40px -40px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #fff;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple p{
+  margin-top:80px;
+  text-align: center;
+  font-weight: 600;
+  color: white;
+  text-shadow: 2px 1px 1px rgba(0,0,0,0.3);
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  4.9% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+
     </style>
   </head>
-  <body>
+  <body class="pink">
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-      <footer id="footer">
+    <div id="root">
+      <div class="pink-pulse">
+        <div class="lds-ripple">
+          <div>&nbsp;</div>
+          <p>loading</p>
+        </div>
+      </div>
+      <footer id="footer" style="position:fixed; bottom:0px">
         <p class="copyright">Made with
             <i class="fa fa-heart"></i> By
       <a target="_blank" title="Zeska" href="http://instagram.com/zeska_francesca">Zeska</a> &amp;
@@ -108,13 +184,14 @@
             <span id="copyright">© 2023 all rights reserved</span>
         </p>
         <div class="social">
-            <a traget="_blank" href="https://facebook.com/smartworkingvan" title="facebook">
+            <a target="_blank" href="https://facebook.com/smartworkingvan" title="facebook">
                 <i class="fa-brands fa-facebook"></i>
             </a>
-            <a traget="_blank" href="https://instagram.com/smartworkingvan" title="facebook">
+            <a target="_blank" href="https://instagram.com/smartworkingvan" title="facebook">
                 <i class="fa-brands fa-instagram"></i>
             </a>
         </div>
     </footer>
+    </div>
   </body>
 </html>

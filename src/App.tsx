@@ -3,6 +3,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import {routes, externalLinks} from './config/menu';
 import { QueryClient, QueryClientProvider } from 'react-query'
 import {
+  Navigate,
   Route,
   BrowserRouter as Router,
   Routes,
@@ -10,6 +11,7 @@ import {
 import ResponsiveAppBar from './components/ResponsiveAppBar';
 import ProtectedRoute from "./components/ProtectedRoute";
 import { I18nextProvider, useTranslation } from 'react-i18next';
+import Ciro from './views/Ciro';
 
 
 export default function App() {
@@ -28,6 +30,7 @@ export default function App() {
               <Route key={i} path={r.path} element={r.requiresAuthentication ? <ProtectedRoute>{r.element}</ProtectedRoute> : <>{r.element}</>} />
             )
           }
+          <Route path="*" element={<Navigate to={'/'} />} />
         </Routes>
     </Router>
     </I18nextProvider>

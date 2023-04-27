@@ -1,7 +1,7 @@
-import { Grid } from '@mui/material';
+import { Alert, Grid, Paper } from '@mui/material';
 import * as React from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import Image from './Image';
+import Image from '../components/Image';
 import ReactGA from "react-ga4";
 
 export default function Fridge(){    
@@ -47,7 +47,10 @@ export default function Fridge(){
                 <Trans>
                     Regola la potenza del frigo in base alle tue esigenze.
                 </Trans>
-            </Grid>                       
+            </Grid>  
+            <Alert severity="warning" style={{margin:'1em auto'}}>
+                <Trans>In caso di forte vento, quando il frigo è alimentato a gas, può capitare che il frigo si spenga. Prestare attenzione.</Trans>
+            </Alert>                     
         </Grid>
         <h2>{t('Come si spegne')}</h2>
         <Grid container spacing={2}>

@@ -17,7 +17,7 @@ export const en = {
         "Scarico bagno":"Toilet disposal",
         "Goboony":"Goboony",
         "Whatsapp":"Whatsapp",
-        "Contattaci":"Contact us",
+        "Scrivici":"Text us",
         "Come si accende":"How to turn on",
         "Come si spegne":"How to turn off",
         //Frigo
@@ -40,7 +40,7 @@ export const en = {
         ,"Esempio: quando fuori ci sono da 5°C a 10°C, mettere la stufa a potenza \"2\" per avere circa 20°C all'interno del camper.":"Example: when it is 5°C to 10°C outside, set the stove to power \"2\" to have around 20°C inside the camper."
         ,"Gira la ghiera esterna in posizione centrale \"Spento\".":"Turn the outer bezel to the central \"Off\" position."
         ,"In estate si suggerisce di usare solo la modalità Acqua calda, mentre in stagioni fredde è quasi sempre consigliabile la funzione Combi.":"In summer it is recommended to use only the hot water mode, while in cold seasons the Combi function is almost always advisable."
-        ,"Se la finestra è aperta la stufa non si accende, si tratta di una misura di sicurezza per evitare che i fumi della combustione rientrino nel veicolo dalla finestra. Chiudere quindi la finestra prima di accendere la stufa.":"If the window is open, the stove does not light, this is a safety measure to prevent combustion fumes from entering the vehicle through the window. Therefore, close the window before lighting the stove."
+        ,"Se la finestra è aperta la stufa non si accende, si tratta di una misura di sicurezza per evitare che i fumi della combustione rientrino nel veicolo dalla finestra. Chiudere quindi la finestra prima di accendere la stufa.":"If the window is open, the stove does not work, this is a safety feature to prevent combustion fumes from entering the vehicle through the open window. Therefore, close the window before turn on the stove."
         //Inverter
         ,"L'inverter produce la corrente necessaria ad alimentare gli apparecchi elettrici che funzionano ad alta tensione trasformando l'energia elettrica contenuta nelle batterie servizi del camper.":"The inverter produces the current necessary to power the electrical devices that operate at high voltage by transforming the electrical energy contained in the camper's service batteries."
         ,"Premere il pulsante rosso":"Press the red switch"

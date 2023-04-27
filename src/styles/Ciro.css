@@ -1,9 +1,6 @@
 .img-gradient{
-    position:relative;
     display:inline-block;
-    margin-top: 1em;
-    margin-bottom: 2em;
-    box-shadow: 0px 5px 5px #aaa;
+    margin-bottom: -1em;
   }
   
   .img-gradient:after {
@@ -40,23 +37,4 @@
     line-height: 1.2;
     letter-spacing: 0.1px;
     font-weight: 600;
-  }
-
-  fakebody {
-    background-color: #ffffff;
-    animation-name: pulsecolor;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-  }
-  
-  @keyframes pulsecolor {
-    0% {
-      background-color: #ffffff;
-    }
-    50% {
-      background-color: #ffa5f4;
-    }
-    100% {
-      background-color: #ffffff;
-    }
   }

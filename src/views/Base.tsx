@@ -1,7 +1,7 @@
 import { Grid } from '@mui/material';
 import * as React from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import Image from './Image';
+import Image from '../components/Image';
 export default function Base(){
     
     const { t, i18n } = useTranslation();

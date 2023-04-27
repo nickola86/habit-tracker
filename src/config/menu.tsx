@@ -1,17 +1,17 @@
 import * as React from 'react'
 import { AcUnit, AirportShuttle, Bolt, Downloading, Facebook, FireExtinguisher as FireExtinguisherIcon, Home, Instagram, LocalFireDepartment, OilBarrel, PropaneTank, Shower as ShowerIcon, Water, Wc, WhatsApp } from '@mui/icons-material';
-import Fridge from '../components/Fridge';
+import Fridge from '../views/Fridge';
 import Ciro from '../views/Ciro';
-import Base from '../components/Base';
-import ACInverter from '../components/ACInverter';
-import Heater from '../components/Heater';
-import Toilet from '../components/Toilet';
-import Gas from '../components/Gas';
-import Shower from '../components/Shower';
-import FireExtinguisher from '../components/FireExtinguisher';
-import WaterRefill from '../components/WaterRefill';
-import WaterDisposal from '../components/WaterDisposal';
-import ToiletDisposal from '../components/ToiletDisposal';
+import Base from '../views/Base';
+import ACInverter from '../views/ACInverter';
+import Heater from '../views/Heater';
+import Toilet from '../views/Toilet';
+import Gas from '../views/Gas';
+import Shower from '../views/Shower';
+import FireExtinguisher from '../views/FireExtinguisher';
+import WaterRefill from '../views/WaterRefill';
+import WaterDisposal from '../views/WaterDisposal';
+import ToiletDisposal from '../views/ToiletDisposal';
 
 export const routes = [{
   pageName:'Smartworkingvan',
@@ -22,7 +22,7 @@ export const routes = [{
   isHomePage: true
 },{
   pageName:'Frigo',
-  path:'fridge',
+  path:'/fridge',
   requiresAuthentication: false,
   icon:<AcUnit/>,
   element: <Fridge/>

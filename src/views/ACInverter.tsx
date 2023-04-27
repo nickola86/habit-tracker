@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {Grid, Alert} from '@mui/material'
 import { Trans, useTranslation } from 'react-i18next'
-import Image from './Image';
+import Image from '../components/Image';
 import ReactGA from "react-ga4";
 
 export default function ACInverter(){    
