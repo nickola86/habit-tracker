@@ -28,6 +28,7 @@ export const en = {
         ,"Tieni premuti entrambi i pulsanti finchè l'indicatore a destra si sposta sulla zona verde.":"Hold both buttons until the indicator on the right moves to the green area."
         ,"Regola la potenza del frigo in base alle tue esigenze.":"Adjust the power of the fridge according to your needs."
         ,"Gira il selettore in posizione verticale \"0\".":"Turn the switch to the vertical \"0\" position."
+        ,"In caso di forte vento, quando il frigo è alimentato a gas, può capitare che il frigo si spenga. Prestare attenzione.":"In case of strong wind, when the fridge is powered by gas, it may happen that the fridge switches off. Pay attention."
         //Stufa
         ,"La stufa serve per la produzione di aria e acqua calda, è alimentata a gas ed è comandata dal pannello \"Truma CP Classic\".":"The stove is used for the production of hot air and water, is gas-fired and is controlled by the \"Truma CP Classic\" panel."
         ,"Gira la ghiera esterna su una delle funzioni disponibili, dall'alto in basso:":"Turn the outer bezel to one of the available functions, from top to bottom:"

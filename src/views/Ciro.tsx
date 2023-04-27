@@ -15,7 +15,7 @@ export default function Ciro() {
   const appRoutes = routes.filter(r=>r.requiresAuthentication===false && r.isHomePage!==true)
 
   const {t,i18n} = useTranslation();
-
+  document.title=t('smartworkingvan')
   return (
     <div>
       <Paper elevation={3} style={{margin:'0 1em 2em 1em', overflow:'hidden'}}>

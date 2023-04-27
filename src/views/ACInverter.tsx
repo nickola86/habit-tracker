@@ -8,6 +8,8 @@ export default function ACInverter(){
 
     const { t, i18n } = useTranslation();
     const basepath="/static/images/acinverter/smartworkingvan-ac-inverter-";
+    ReactGA.send({ hitType: "pageview", page: window.location.pathname});
+    document.title=t('AC Inverter')
     return <div className='page-base'>
         <h1>{t('AC Inverter')}</h1>
         <Trans>

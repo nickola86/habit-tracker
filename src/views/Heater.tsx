@@ -8,6 +8,8 @@ export default function Heater(){
 
     const { t, i18n } = useTranslation();
     const basepath="/static/images/heater/smartworkingvan-truma-combi-";
+    ReactGA.send({ hitType: "pageview", page: window.location.pathname});
+    document.title=t('Stufa')
     return <div className='page-base'>
         <h1>{t('Stufa')}</h1>
         <Grid container spacing={2}>

@@ -9,6 +9,8 @@ export default function Fridge(){
     const { t, i18n } = useTranslation();
     const Item = <></>
     const basepath="/static/images/fridge/smartworkingvan-camper-fridge-";
+    ReactGA.send({ hitType: "pageview", page: window.location.pathname});
+    document.title=t('Frigo')
     return <div className='page-base'>
         <h1>{t('Frigo')}</h1>
         <Trans>
@@ -47,10 +49,12 @@ export default function Fridge(){
                 <Trans>
                     Regola la potenza del frigo in base alle tue esigenze.
                 </Trans>
-            </Grid>  
-            <Alert severity="warning" style={{margin:'1em auto'}}>
-                <Trans>In caso di forte vento, quando il frigo è alimentato a gas, può capitare che il frigo si spenga. Prestare attenzione.</Trans>
-            </Alert>                     
+            </Grid>
+            <Grid item xs={12} md={12}>
+                <Alert severity="warning" style={{margin:'1em auto'}}>
+                    <Trans>In caso di forte vento, quando il frigo è alimentato a gas, può capitare che il frigo si spenga. Prestare attenzione.</Trans>
+                </Alert>
+            </Grid>           
         </Grid>
         <h2>{t('Come si spegne')}</h2>
         <Grid container spacing={2}>
