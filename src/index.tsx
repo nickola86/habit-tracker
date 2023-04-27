@@ -8,7 +8,7 @@ import { I18nextProvider } from 'react-i18next';
 import './i18n/i18n';
 import ReactGA from 'react-ga4'
 
-ReactGA.initialize("G-P7176H6N0S");
+ReactGA.initialize("G-5V3F849KSL");
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
