@@ -77,5 +77,13 @@ export const en = {
         ,"Posizionare il van in modo che il tubo di scarico sia al di sopra della vasca di scarico":"Place the van so that the drain hose is above the drain pan"
         ,"Tirare verso di se la maniglia per aprire il tubo di scarico":"Pull the handle to start water flowing"
         ,"Spingere la maniglia per chiudere il tubo di scarico":"Push the handle to stop water flowing"
+        //Acque nere
+        ,"E' possibile scaricare la cassetta WC presso le aree servizi e nei campeggi.":"WC box can be dumped at camper service areas and campsites."
+        ,"Aprire lo sportello del vano cassetta":"Open the WC box compartment door"
+        ,"Solleva la maniglia arancione ed estrai la cassetta":"Lift the orange handle and take out the cassette"
+        ,"Solleva il tubo di scarico e svita il tappo della cassetta":"Lift the drain hose and unscrew the cassette cap"
+        ,"Premere il pulsante tondo arancione per facilitare lo svuotamento":"Press the orange round button to facilitate emptying"
+        ,"Metti un sacchetto disgregante nella cassetta, quindi rimetti la cassetta nel suo alloggiamento":"Put a blue sachet in the box, then put the WC box back in"
+        ,"E' buona norma non gettare la carta igienica nella cassetta per evitare intasamenti. Per favore utilizzare un contenitore separato.":"It is good practice not to throw toilet paper in the box to avoid clogging. Please use a separate bin."
     }
 }

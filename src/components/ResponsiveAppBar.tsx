@@ -148,7 +148,7 @@ function ResponsiveAppBar() {
           {<Box sx={{ flexGrow: 0}}>
             <Tooltip title={t('changeLanguage')}>
               <IconButton onClick={handleOpenLangMenu} sx={{ p: 0, m:0}}>
-                <Avatar  sx={{ width: 32, height: 32, marginRight:'1em' }} alt={i18n.language} src={`/static/images/flags/${i18n.language}.svg`} />
+                <Avatar variant='rounded' sx={{ width: 32, height: 32 }} alt={i18n.language} src={`/static/images/flags/${i18n.language}.svg`} />
               </IconButton>
             </Tooltip>
             <Menu
@@ -169,7 +169,7 @@ function ResponsiveAppBar() {
             >
               {languages.map((l) => (
                 <MenuItem key={l} onClick={()=>switchLanguage(l)}>
-                  <Avatar src={`/static/images/flags/${l}.svg`} />
+                  <Avatar variant='rounded' sx={{ width: 32, height: 32 }} alt={l} src={`/static/images/flags/${l}.svg`} /> <span style={{marginLeft:'1em'}}>{t(l)}</span>
                 </MenuItem>
               ))}
             </Menu>

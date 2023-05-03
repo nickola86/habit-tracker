@@ -77,7 +77,7 @@ export const routes = [{
 },{
   pageName:'Scarico bagno',
   path:'/toilet-disposal',
-  requiresAuthentication: true,
+  requiresAuthentication: false,
   icon:<Downloading/>,
   element: <ToiletDisposal/>
 }
