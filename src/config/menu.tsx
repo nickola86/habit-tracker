@@ -65,7 +65,7 @@ export const routes = [{
 },{
   pageName:'Carico acqua',
   path:'/water-refill',
-  requiresAuthentication: true,
+  requiresAuthentication: false,
   icon:<Water/>,
   element: <WaterRefill/>
 },{

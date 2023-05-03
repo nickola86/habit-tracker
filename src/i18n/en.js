@@ -4,6 +4,12 @@ export const en = {
         appName: "smartworkingvan",
         changeLanguage:'Change Language',
         //Generali
+        "Su di noi":"About us",
+        "Lavoriamo su \"Ciro\"":"Working from \"Ciro\"",
+        "Viviamo in Sardegna": "Living in Sardinia",
+        "Lei": "Her",
+        "Lui": "Him",
+        "Noleggio": "Rent",
         "Frigo":"Fridge",
         "Smartworkingvan":"Smartworkingvan",
         "AC Inverter":"AC Inverter",
@@ -48,6 +54,19 @@ export const en = {
         ,"Non accendere l'inverter quando si è collegati alla rete elettrica esterna.":"Do not turn on the inverter when connected to the external power supply."
         ,"Nelle aree attrezzate utilizzare la presa esterna per collegare il camper alla rete elettrica.":"In equipped areas, use the external socket to connect the camper to the electricity mains."
         ,"Collegamento alla rete elettrica esterna":"Connect to external power supply"
+        //Carico acqua
+        ,"E' possibile caricare l'acqua presso le fontanelle pubbliche presenti in strada o nei campeggi":"It is possible to refill water at the public fountains on the street or in the campsites"
+        ,"Assicurarsi sempre che l'acqua sia potabile prima di rifornire":"Always make sure drinking water is available before refilling"
+        ,"Collegamento alla fontanella":"Fountain connection"
+        ,"Avvitare il raccordo alla fontanella":"Connect the joint to the fountain"
+        ,"Collegare il tubo di gomma al raccordo":"Connect the rubber hose to the joint"
+        ,"Aprire con la chiave il tappo di carico acqua":"Open the water filler cap with the key"
+        ,"Aprire la fontanella, inserire il tubo di gomma e attendere il carico completo":"Open the fountain, insert the rubber hose and wait the tank to fill up"
+        ,"Il carico acqua è completo quando l'acqua trabocca dal foro di carico":"Tank is full filled up when water spills out"
+        ,"Rimuovere il raccordo dalla fontanella a fine rifornimento":"Please remember to remove the joint after refill"
+        ,"":""
+        ,"":""
+        ,"":""
 
     }
 }
