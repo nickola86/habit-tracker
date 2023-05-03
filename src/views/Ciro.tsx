@@ -19,7 +19,7 @@ export default function Ciro() {
   return (
     <div>
       <Paper elevation={3} style={{margin:'0 1em 2em 1em', overflow:'hidden'}}>
-      <div className={'img-gradient'}>
+      <div style={{marginBottom:'-0.5em'}}>
         <img width="100%" src={`/static/images/foto.jpg`} />
         <h1 style={{position:'absolute',top:'1.5em',left:'1em', opacity:'0', textShadow:'1px 1px 3px black'}}><Trans>Smartworkingvan</Trans></h1>
       </div>

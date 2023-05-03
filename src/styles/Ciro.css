@@ -1,24 +1,6 @@
-.img-gradient{
-    display:inline-block;
-    margin-bottom: -1em;
-  }
-  
-  .img-gradient:after {
-    content:'';
-    position:absolute;
-    left:0; top:0;
-    width:100%; height:100%;
-    display:inline-block;
-    background:linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 50%)
-  }
-  .img-gradient img{
-    display:block;
-  }
   .page-base{
     margin: 1em;
     margin-bottom: 5em;
-  }
-  body .page-base{
     font-family: "IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     font-weight: 400;
     color: var(--muidocs-palette-grey-900, #1A2027);

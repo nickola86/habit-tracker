@@ -23,6 +23,7 @@ import { useTranslation } from 'react-i18next';
 import { Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import { AirportShuttle, Home } from '@mui/icons-material';
 import FabContactUs from './FabContactUs';
+import ReactGA from 'react-ga4';
 
 function ResponsiveAppBar() {
 
@@ -56,7 +57,11 @@ function ResponsiveAppBar() {
   };
 
 
-  const navigateToBlank = (path: string)=>{
+  const navigateToBlank = (path: string,action: string)=>{
+    ReactGA.event({
+      category: 'Navigation',
+      action,
+    });
     window.open(path,"_blank");
   }
 
@@ -200,7 +205,7 @@ function ResponsiveAppBar() {
               ))}
               <hr/>
               {externalLinks.map((s) => (
-                  <MenuItem key={s.pageName} onClick={()=>navigateToBlank(s.externalUrl)}>
+                  <MenuItem key={s.pageName} onClick={()=>navigateToBlank(s.externalUrl, s.pageName)}>
                     <Typography textAlign="center">{t(s.pageName)}</Typography>
                   </MenuItem>
               ))}
@@ -241,7 +246,7 @@ function ResponsiveAppBar() {
             <Divider/>
             <List>
             {externalLinks.map((s) => (
-                <ListItem key={s.pageName} disablePadding onClick={()=>navigateToBlank(s.externalUrl)}>
+                <ListItem key={s.pageName} disablePadding onClick={()=>navigateToBlank(s.externalUrl,s.pageName)}>
                 <ListItemButton>
                   <ListItemIcon>
                     {s.icon}
