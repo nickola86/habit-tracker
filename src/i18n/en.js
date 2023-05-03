@@ -68,6 +68,14 @@ export const en = {
         ,"Dopo il rifornimento":"After refill"
         ,"Chiudere con la chiave il tappo di carico acqua":"Close the water filler cap with the key"
         ,"Chiudere la fontana e rimuovere il raccordo":"Close the fountain and remove the joint"
-        
+        //Scarico acqua
+        ,"E' possibile scaricare le acque grigie presso le aree servizi e nei campeggi.":"Gray water can be dumped at camper service areas and campsites."
+        ,"Per trovare le aree servizi si consiglia l'uso dell'applicazione":"To find the service areas we recommend using the"
+        ,"disponibile su Play Store e Apple Store":"application available on the Play Store and Apple Store"
+        ,"Prima dello scarico":"Before dump"
+        ,"Dopo lo scarico":"After dump"
+        ,"Posizionare il van in modo che il tubo di scarico sia al di sopra della vasca di scarico":"Place the van so that the drain hose is above the drain pan"
+        ,"Tirare verso di se la maniglia per aprire il tubo di scarico":"Pull the handle to start water flowing"
+        ,"Spingere la maniglia per chiudere il tubo di scarico":"Push the handle to stop water flowing"
     }
 }

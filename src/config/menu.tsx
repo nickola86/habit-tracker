@@ -71,7 +71,7 @@ export const routes = [{
 },{
   pageName:'Scarico acqua',
   path:'/water-disposal',
-  requiresAuthentication: true,
+  requiresAuthentication: false,
   icon:<OilBarrel/>,
   element: <WaterDisposal/>
 },{
