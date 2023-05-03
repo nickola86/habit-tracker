@@ -68,5 +68,6 @@ export const en = {
         ,"Dopo il rifornimento":"After refill"
         ,"Chiudere con la chiave il tappo di carico acqua":"Close the water filler cap with the key"
         ,"Chiudere la fontana e rimuovere il raccordo":"Close the fountain and remove the joint"
+        
     }
 }
