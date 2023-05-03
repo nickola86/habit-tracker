@@ -59,14 +59,14 @@ export const en = {
         ,"Assicurarsi sempre che l'acqua sia potabile prima di rifornire":"Always make sure drinking water is available before refilling"
         ,"Collegamento alla fontanella":"Fountain connection"
         ,"Avvitare il raccordo alla fontanella":"Connect the joint to the fountain"
-        ,"Collegare il tubo di gomma al raccordo":"Connect the rubber hose to the joint"
+        ,"Collegare il tubo di gomma al raccordo e aprire l'acqua":"Connect the rubber hose to the joint and open the fountain"
         ,"Aprire con la chiave il tappo di carico acqua":"Open the water filler cap with the key"
-        ,"Aprire la fontanella, inserire il tubo di gomma e attendere il carico completo":"Open the fountain, insert the rubber hose and wait the tank to fill up"
+        ,"Inserire il tubo di gomma e attendere il carico completo":"Insert the rubber hose and wait the tank to fill up"
         ,"Il carico acqua è completo quando l'acqua trabocca dal foro di carico":"Tank is full filled up when water spills out"
         ,"Rimuovere il raccordo dalla fontanella a fine rifornimento":"Please remember to remove the joint after refill"
-        ,"":""
-        ,"":""
-        ,"":""
-
+        ,"Prima del rifornimento":"Before refill"
+        ,"Dopo il rifornimento":"After refill"
+        ,"Chiudere con la chiave il tappo di carico acqua":"Close the water filler cap with the key"
+        ,"Chiudere la fontana e rimuovere il raccordo":"Close the fountain and remove the joint"
     }
 }

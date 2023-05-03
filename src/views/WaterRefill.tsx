@@ -26,7 +26,7 @@ export default function WaterRefill(){
                 <Image path={`${basepath}1.jpg`}/> 
             </Grid>
         </Grid>
-        <h2>{t('Collegamento alla fontanella')}</h2>
+        <h2>{t('Prima del rifornimento')}</h2>
         <Grid container spacing={2}>
             <Grid item xs={12} md={12}>
                 <Image path={`${basepath}2.jpg`}/> 
@@ -38,30 +38,39 @@ export default function WaterRefill(){
                 <Image path={`${basepath}3.jpg`}/> 
             </Grid>
             <Grid item xs={12} md={12}>
-                <Trans>Collegare il tubo di gomma al raccordo</Trans>
+                <Trans>Aprire con la chiave il tappo di carico acqua</Trans>
             </Grid>
             <Grid item xs={12} md={12}>
                 <Image path={`${basepath}4.jpg`}/> 
             </Grid>
             <Grid item xs={12} md={12}>
-                <Trans>Aprire con la chiave il tappo di carico acqua</Trans>
+                <Trans>Collegare il tubo di gomma al raccordo e aprire l'acqua</Trans>
             </Grid>
             <Grid item xs={12} md={12}>
                 <Image path={`${basepath}5.jpg`}/> 
             </Grid>
             <Grid item xs={12} md={12}>
-                <Trans>Aprire la fontanella, inserire il tubo di gomma e attendere il carico completo</Trans>
+                <Trans>Inserire il tubo di gomma e attendere il carico completo</Trans>
             </Grid>
             <Grid item xs={12} md={12}>
                 <Alert severity='info'>
                     <Trans>Il carico acqua è completo quando l'acqua trabocca dal foro di carico</Trans>
                 </Alert>
             </Grid>
+        </Grid>
+        <h2>{t('Dopo il rifornimento')}</h2>
+        <Grid container spacing={2}>
+            <Grid item xs={12} md={12}>
+                <Trans>Chiudere la fontana e rimuovere il raccordo</Trans>
+            </Grid>
             <Grid item xs={12} md={12}>
                 <Image path={`${basepath}2.jpg`}/> 
-                <Alert severity='warning'>
-                    <Trans>Rimuovere il raccordo dalla fontanella a fine rifornimento</Trans>
-                </Alert>
+            </Grid>
+            <Grid item xs={12} md={12}>
+                <Trans>Chiudere con la chiave il tappo di carico acqua</Trans>
+            </Grid>
+            <Grid item xs={12} md={12}>
+                <Image path={`${basepath}3.jpg`}/> 
             </Grid>
         </Grid>
    </div>
