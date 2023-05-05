@@ -83,13 +83,19 @@ export const routes = [{
 }
 ]
 export const externalLinks = [
-{
-  pageName:'Goboony', 
-  path:'/goboony',
-  externalUrl: 'https://www.goboony.it/campers/italia/sardegna/iglesias/43288',
-  requiresAuthentication: false,
-  icon:<AirportShuttle/>
-},{
+  {
+    pageName:'Goboony', 
+    path:'/goboony',
+    externalUrl: 'https://www.goboony.it/campers/italia/sardegna/iglesias/43288',
+    requiresAuthentication: false,
+    icon:<AirportShuttle/>
+  },{
+    pageName:'Yescapa', 
+    path:'/yescapa',
+    externalUrl: 'https://www.yescapa.it/camper/62312',
+    requiresAuthentication: false,
+    icon:<AirportShuttle/>
+  },{
   pageName:'Whatsapp',
   path:'/whatsapp',
   externalUrl: 'https://wa.me/+393513531335',

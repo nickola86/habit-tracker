@@ -7,6 +7,7 @@ import { Phone, WhatsApp } from '@mui/icons-material';
 import { Trans, useTranslation } from 'react-i18next';
 import FabContactUs from '../components/FabContactUs';
 import ReactGA from "react-ga4";
+import Image from '../components/Image';
 
 export default function Ciro() {
 
@@ -37,7 +38,18 @@ export default function Ciro() {
         <Grid item md={6} xs={12}>
         <Paper elevation={3} style={{margin:'0 1em 2em 1em', padding:'0.5em 2em'}}>
             <h2><Trans>Noleggio</Trans>:</h2>
-            <p><a target="_blank" title="Goboony"  href="https://www.goboony.it/campers/italia/sardegna/iglesias/43288">goboony.it</a></p>
+            <Grid container>
+            <Grid item xs={12} md={6} p={1}>
+                <a target="_blank" title="Goboony"  href="https://www.goboony.it/campers/italia/sardegna/iglesias/43288">
+                  <Image path={'/static/images/goboony.jpg'}></Image> 
+                </a>
+              </Grid>
+              <Grid item xs={12} md={6} p={1}>
+                <a target="_blank" title="Yescapa"  href="https://www.yescapa.it/camper/62312/">
+                  <Image path={'/static/images/yescapa.jpg'}></Image> 
+                </a>
+              </Grid>
+            </Grid>
           </Paper>
         </Grid>
       </Grid>
