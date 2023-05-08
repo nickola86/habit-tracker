@@ -53,7 +53,7 @@ export const routes = [{
 },{
   pageName:'Gas',
   path:'/gas',
-  requiresAuthentication: true,
+  requiresAuthentication: false,
   icon:<PropaneTank/>,
   element: <Gas/>
 },{
