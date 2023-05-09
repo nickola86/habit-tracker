@@ -26,14 +26,6 @@ export default function Ciro() {
       </div>
       </Paper>
       <Grid container>
-      <Grid item md={6} xs={12}>
-          <Paper elevation={3} style={{margin:'0 1em 2em 1em', padding:'0.5em 2em'}}>
-            <h2><Trans>Su di noi</Trans>:</h2>
-            <p>💻 <Trans>Lavoriamo su "Ciro"</Trans></p>
-            <p>🌊 <Trans>Viviamo in Sardegna</Trans></p>
-            <p><Instagram style={{verticalAlign:'bottom'}}/> <a target="_blank" title="Smartworkingvan" href="http://instagram.com/smartworkingvan">smartworkingvan</a></p>
-          </Paper>
-        </Grid>
         <Grid item md={6} xs={12}>
         <Paper elevation={3} style={{margin:'0 1em 2em 1em', padding:'0.5em 2em'}}>
             <h2><Trans>Noleggio</Trans>:</h2>
@@ -49,6 +41,14 @@ export default function Ciro() {
                 </a>
               </Grid>
             </Grid>
+          </Paper>
+        </Grid>
+        <Grid item md={6} xs={12}>
+          <Paper elevation={3} style={{margin:'0 1em 2em 1em', padding:'0.5em 2em'}}>
+            <h2><Trans>Su di noi</Trans>:</h2>
+            <p>💻 <Trans>Lavoriamo su "Ciro"</Trans></p>
+            <p>🌊 <Trans>Viviamo in Sardegna</Trans></p>
+            <p><Instagram style={{verticalAlign:'bottom'}}/> <a target="_blank" title="Smartworkingvan" href="http://instagram.com/smartworkingvan">smartworkingvan</a></p>
           </Paper>
         </Grid>
       </Grid>
