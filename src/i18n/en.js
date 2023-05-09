@@ -9,6 +9,7 @@ export const en = {
         "Viviamo in Sardegna": "Living in Sardinia",
         "Lei": "Her",
         "Lui": "Him",
+        "Noi": "Us",
         "Noleggio": "Rent",
         "Frigo":"Fridge",
         "Smartworkingvan":"Smartworkingvan",
@@ -83,7 +84,7 @@ export const en = {
         ,"Solleva la maniglia arancione ed estrai la cassetta":"Lift the orange handle and take out the cassette"
         ,"Solleva il tubo di scarico e svita il tappo della cassetta":"Lift the drain hose and unscrew the cassette cap"
         ,"Premere il pulsante tondo arancione per facilitare lo svuotamento":"Press the orange round button to facilitate emptying"
-        ,"Metti un sacchetto disgregante nella cassetta, quindi rimetti la cassetta nel suo alloggiamento":"Put a blue sachet in the box, then put the WC box back in"
+        ,"Eventualmente metti un sacchetto disgregante nella cassetta, quindi rimetti la cassetta nel suo alloggiamento":"Optionally put a blue sachet in the box, then put the WC box back in"
         ,"E' buona norma non gettare la carta igienica nella cassetta per evitare intasamenti. Per favore utilizzare un contenitore separato.":"It is good practice not to throw toilet paper in the box to avoid clogging. Please use a separate bin."
         //Gas
         ,"Per la legge di Murphy la bombola del gas finisce sempre di notte quando fa freddo... 😁":"By Murphy's law the gas cylinder always runs out at night when it's cold... 😁"

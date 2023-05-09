@@ -3,7 +3,7 @@ import * as React from 'react';
 import '../styles/Ciro.css';
 import { routes } from '../config/menu';
 import { Fab } from '@mui/material';
-import { Phone, WhatsApp } from '@mui/icons-material';
+import { Instagram, Phone, WhatsApp } from '@mui/icons-material';
 import { Trans, useTranslation } from 'react-i18next';
 import FabContactUs from '../components/FabContactUs';
 import ReactGA from "react-ga4";
@@ -31,8 +31,7 @@ export default function Ciro() {
             <h2><Trans>Su di noi</Trans>:</h2>
             <p>💻 <Trans>Lavoriamo su "Ciro"</Trans></p>
             <p>🌊 <Trans>Viviamo in Sardegna</Trans></p>
-            <p><Trans>Lei</Trans>: <a target="_blank" title="Zeska" href="http://instagram.com/zeska_francesca">zeska_francesca</a></p>
-            <p><Trans>Lui</Trans>: <a target="_blank" title="Nico" href="http://instagram.com/nicola.di.trani">nicola.di.trani</a></p>
+            <p><Instagram style={{verticalAlign:'bottom'}}/> <a target="_blank" title="Smartworkingvan" href="http://instagram.com/smartworkingvan">smartworkingvan</a></p>
           </Paper>
         </Grid>
         <Grid item md={6} xs={12}>

@@ -58,7 +58,7 @@ export default function ToiletDisposal(){
                 <Image path={`${basepath}4.jpg`}/> 
             </Grid>
             <Grid item xs={12} md={12}>
-                <Trans>Metti un sacchetto disgregante nella cassetta, quindi rimetti la cassetta nel suo alloggiamento</Trans>
+                <Trans>Eventualmente metti un sacchetto disgregante nella cassetta, quindi rimetti la cassetta nel suo alloggiamento</Trans>
             </Grid>
             <Grid item xs={12} md={12}>
                 <Alert severity='warning'>
