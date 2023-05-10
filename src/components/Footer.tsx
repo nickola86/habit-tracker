@@ -6,9 +6,6 @@ export default function Footer()
         <span id="copyright"> © 2023 all rights reserved</span>
     </p>
     <div className="social">
-        <a target="_blank" href="https://facebook.com/smartworkingvan" title="facebook">
-            <i className="fa-brands fa-facebook"></i>
-        </a>
         <a target="_blank" href="https://instagram.com/smartworkingvan" title="facebook">
             <i className="fa-brands fa-instagram"></i>
         </a>

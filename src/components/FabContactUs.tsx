@@ -2,7 +2,7 @@ import { WhatsApp } from '@mui/icons-material'
 import { Fab } from '@mui/material'
 import * as React from 'react'
 import { useTranslation } from 'react-i18next'
-import { externalLinks } from '../config/menu';
+import { externalLinks } from '../config/values';
 export default function FabContactUs(){
     const {t} = useTranslation();
     const handler = () => {

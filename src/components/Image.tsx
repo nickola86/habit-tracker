@@ -5,9 +5,7 @@ export default function Image(props:any) {
         margin: "0",
         borderRadius: "20px",
         backgroundColor:'lightgray',
-        minHeight:'100px',
-        minWidth:'100px',
-        maxWidth:'800px',
-    }} width="100%" src={props.path} loading="lazy"/>
+        maxWidth:'600px',
+    }} width={props.width || "100%"} height={props.height || undefined} src={props.path} loading="lazy"/>
     </div>
 }

@@ -15,7 +15,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import { Link, useNavigate } from "react-router-dom";
-import { routes, externalLinks } from '../config/menu';
+import { routes, externalLinks } from '../config/values';
 import { useRecoilValue } from 'recoil';
 import { userState } from '../atoms/userState';
 import { useTranslation } from 'react-i18next';

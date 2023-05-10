@@ -4,6 +4,8 @@ import { Trans, useTranslation } from 'react-i18next'
 import Image from '../components/Image';
 import ReactGA from "react-ga4";
 import {Helmet} from 'react-helmet'
+import MetaHeaders from '../components/MetaHeaders';
+import { meta } from '../config/values';
 
 export default function Fridge(){    
 
@@ -12,15 +14,12 @@ export default function Fridge(){
     const basepath="/static/images/fridge/smartworkingvan-camper-fridge-";
     ReactGA.send({ hitType: "pageview", page: window.location.pathname});
     return <div className='page-base'>
-        <Helmet>
-            <title>{t('Frigo')}</title>
-            <meta name="description" lang='it' content="Il frigo è trivalente, questo vuol dire che può essere alimentato a gas se si &egrave; a veicolo fermo, con corrente elettrica 12v se si &egrave; a veicolo in movimento, con corrente elettrica 220v se si &egrave; nei campeggi connessi alla rete elettrica." />
-            <meta name="description" lang='en' content="The fridge is trivalent, this means that it can be powered by gas if you are with the vehicle stationary, with 12v electricity if you are on the move, or with 220v electricity if you are in campsites connected to the power line." />
-            <meta property="og:title" content={t('Frigo') || ""} />
-            <meta property="og:type" content="website" />
-            <meta property="og:url" content={document.location.href} />
-            <meta property="og:image" content={`${basepath}1.jpg`}/>
-        </Helmet>
+        <MetaHeaders 
+            title={t('Frigo') as string}
+            image={`${basepath}1.jpg`}
+            description_it={"Il frigo è trivalente, questo vuol dire che può essere alimentato a gas se si è a veicolo fermo, con corrente elettrica 12v se si è a veicolo in movimento, con corrente elettrica 220v se si è nei campeggi connessi alla rete elettrica."}
+            description_en={"The fridge is trivalent, this means that it can be powered by gas if you are with the vehicle stationary, with 12v electricity if you are on the move, or with 220v electricity if you are in campsites connected to the power line."}
+        ></MetaHeaders>
         <h1>{t('Frigo')}</h1>
         <Trans>
             Il frigo è trivalente, questo vuol dire che può essere alimentato a gas se si &egrave; a veicolo fermo, con corrente elettrica 12v se si &egrave; a veicolo in movimento, con corrente elettrica 220v se si &egrave; nei campeggi connessi alla rete elettrica.
