@@ -15,7 +15,7 @@ export default function MetaHeaders(props: MetaHeadersType){
         <meta property="og:title" content={props.title || meta.title} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={props.url || meta.url} />
-        <meta property="og:image" content={props.image || meta.image} />
+        <meta property="og:image" content={`https://www.smartworkingvan.com${props.image || meta.image}`} />
         <meta name="generator" content={props.generator || meta.generator} />
         <meta name="description" lang="it" content={props.description_it || meta.description_it} />
         <meta name="description" lang="en" content={props.description_en || meta.description_en} />

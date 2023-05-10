@@ -18,7 +18,7 @@ export const meta: MetaHeadersType = {
   title:'smartworkingvan',
   url:'https://www.smartworkingvan.com',
   generator: "Smart Working Van, an office on wheels with everything you need to work efficiently and travel!",
-  image: 'https://www.smartworkingvan.com/static/images/ciro.jpg',
+  image: '/static/images/ciro.jpg',
   description_it: "Smart Working Van, un ufficio su ruote con tutto ciò che serve per lavorare in modo efficiente viaggiando!",
   description_en:"Smart Working Van, an office on wheels with everything you need to work efficiently and travel!"
 }
