@@ -19,7 +19,7 @@ export default function Ciro() {
   document.title=t('smartworkingvan')
   return (
     <div>
-      <Paper elevation={3} style={{margin:'0 1em 2em 1em', overflow:'hidden'}}>
+      <Paper elevation={3} style={{margin:'2em 1em 0 1em', overflow:'hidden', borderBottomLeftRadius:0,borderBottomRightRadius:0}}>
       <div style={{marginBottom:'-0.5em'}}>
         <img width="100%" src={`/static/images/foto.jpg`} />
         <h1 style={{position:'absolute',top:'1.5em',left:'1em', opacity:'0', textShadow:'1px 1px 3px black'}}><Trans>Smartworkingvan</Trans></h1>
@@ -27,7 +27,7 @@ export default function Ciro() {
       </Paper>
       <Grid container>
         <Grid item md={6} xs={12}>
-          <Paper elevation={3} style={{margin:'0 1em 2em 1em', padding:'0.5em 2em'}}>
+          <Paper elevation={3} style={{margin:'0 1em 2em 1em', padding:'0.5em 2em', borderTopLeftRadius:0, borderTopRightRadius:0}}>
             <h2><Trans>Su di noi</Trans>:</h2>
             <p>💻 <Trans>Lavoriamo su "Ciro"</Trans></p>
             <p>🌊 <Trans>Viviamo in Sardegna</Trans></p>

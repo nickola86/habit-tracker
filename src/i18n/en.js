@@ -3,6 +3,9 @@ export const en = {
         language: "English",
         appName: "smartworkingvan",
         changeLanguage:'Change Language',
+        meta:{
+            description:"Smart Working Van, an office on wheels with everything you need to work efficiently and travel!"
+        },
         //Generali
         "Su di noi":"About us",
         "Lavoriamo su \"Ciro\"":"Working from \"Ciro\"",
