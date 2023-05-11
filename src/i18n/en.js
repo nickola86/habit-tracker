@@ -107,5 +107,9 @@ export const en = {
         ,"Aprire la bombola":"Open the cylinder"
         ,"Legare la bombola":"Tie the cylinder"
         ,"Legare la seconda bombola vuota":"Tie the second empty cylinder"
+        //Partners
+        ,"Cerchiamo di fare in modo che \"Ciro\", il nostro camper, sia eco friendly scegliendo accuratamente i prodotti che utilizziamo a bordo affinchè essi abbiano il minor impatto ambientale possibile.":"We try to make \"Ciro\", our camper, eco-friendly by carefully choosing the products we use on board so that they have the least possible environmental impact."
+        ,"Jebel Sardinia è la tua guida di fiducia per escursioni e trekking in Sardegna. Scopri con noi i paesaggi di mare e di montagna del Golfo di Orosei, i segreti del Supramonte, i sapori della Barbagia, le sconfinate spiagge della Baronia e molto altro!":"Jebel Sardinia is your trusted guide for excursions and trekking in Sardinia. Discover with us the sea and mountain landscapes of the Gulf of Orosei, the secrets of Supramonte, the flavors of Barbagia, the boundless beaches of Baronia and much more!"
+        ,"Vuoi sapere come Vivere da Nomade Digitale? Leggi questa guida per sapere tutto ciò che ti serve per diventare nomade digitale e Vivere Viaggiando!":"Do you want to know how to live as a digital nomad? Read this guide to know everything you need to become a digital nomad and Live Travelling!"
     }
 }
