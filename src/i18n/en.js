@@ -5,7 +5,7 @@ export const en = {
         changeLanguage:'Change Language',
         //Generali
         "Su di noi":"About us",
-        "Lavoriamo sul nostro camper \"Ciro\"":"Working from our campervan \"Ciro\"",
+        "Lavoriamo su \"Ciro\"":"Working from \"Ciro\"",
         "Viviamo in Sardegna": "Living in Sardinia",
         "Lei": "Her",
         "Lui": "Him",
