@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { AcUnit, Bolt,  Description, Diversity1, Diversity1TwoTone, Downloading, FireExtinguisher as FireExtinguisherIcon, Home, Instagram, LocalFireDepartment, OilBarrel, PropaneTank, Shower as ShowerIcon, Water, Wc, WhatsApp } from '@mui/icons-material';
+import { AcUnit, Bolt,  Description, Diversity1, Diversity1TwoTone, Downloading, FireExtinguisher as FireExtinguisherIcon, Home, Instagram, LocalFireDepartment, OilBarrel, PropaneTank, Shower as ShowerIcon, Tune, Water, Wc, WhatsApp } from '@mui/icons-material';
 import Fridge from '../views/Fridge';
 import Ciro from '../views/Ciro';
 import ACInverter from '../views/ACInverter';
@@ -14,6 +14,7 @@ import ToiletDisposal from '../views/ToiletDisposal';
 import Image from '../components/Image';
 import { MetaHeadersType } from '../components/MetaHeaders';
 import Partners from '../views/Partners';
+import ControlPanel from '../views/ControlPanel';
 
 export const meta: MetaHeadersType = {
   title:'smartworkingvan',
@@ -32,17 +33,23 @@ export const routes = [{
   icon: <Home color="primary"/>,
   isHomePage: true
 },{
-  pageName:'Frigo',
-  path:'/fridge',
-  requiresAuthentication: false,
-  icon:<AcUnit sx={{color:'#1976d2'}}/>,
-  element: <Fridge/>
+  pageName:'Pannello di controllo',
+  path:'/control-panel',
+  requiresAuthentication: true,
+  icon:<Tune sx={{color:'#1976d2'}}/>,
+  element: <ControlPanel/>
 },{
   pageName:'Stufa',
   path:'/heater',
   requiresAuthentication: false,
   icon:<LocalFireDepartment sx={{color:'#1976d2'}}/>,
   element: <Heater/>
+},{
+  pageName:'Frigo',
+  path:'/fridge',
+  requiresAuthentication: false,
+  icon:<AcUnit sx={{color:'#1976d2'}}/>,
+  element: <Fridge/>
 },{
   pageName:'AC Inverter',
   path:'/ac-inverter',

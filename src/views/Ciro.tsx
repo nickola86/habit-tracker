@@ -14,8 +14,6 @@ export default function Ciro() {
 
   ReactGA.send({ hitType: "pageview", page: window.location.pathname});
   
-  const appRoutes = routes.filter(r=>r.requiresAuthentication===false && r.isHomePage!==true)
-
   const {t,i18n} = useTranslation();
   document.title=t('smartworkingvan')
   return (
@@ -33,7 +31,6 @@ export default function Ciro() {
             <h2><Trans>Su di noi</Trans>:</h2>
             <p>💻 <Trans>Lavoriamo su "Ciro"</Trans></p>
             <p>🌊 <Trans>Viviamo in Sardegna</Trans></p>
-            <p><Instagram style={{verticalAlign:'bottom'}}/> <a target="_blank" title="Smartworkingvan" href="http://instagram.com/smartworkingvan">smartworkingvan</a></p>
           </Paper>
         </Grid>
         <Grid item md={12} xs={12}>

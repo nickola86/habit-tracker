@@ -13,6 +13,7 @@ export const en = {
         "Noleggio": "Rent",
         "Filosofia": "Philosophy",
         "Scopri di più": "Learn more",
+        "Pannello di controllo": "Control panel",
         "Frigo":"Fridge",
         "Smartworkingvan":"Smartworkingvan",
         "AC Inverter":"AC Inverter",
