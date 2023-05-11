@@ -1,6 +1,6 @@
 import * as React from 'react'
 import CssBaseline from '@mui/material/CssBaseline';
-import {routes, externalLinks} from './config/values';
+import {routes, externalLinks, partners} from './config/values';
 import { QueryClient, QueryClientProvider } from 'react-query'
 import {
   Navigate,
@@ -25,8 +25,13 @@ export default function App() {
     <Router>
         <ResponsiveAppBar/>
         <Routes>
-          {
+        {
             routes.map((r,i)=>
+              <Route key={i} path={r.path} element={r.requiresAuthentication ? <ProtectedRoute>{r.element}</ProtectedRoute> : <>{r.element}</>} />
+            )
+          }
+          {
+            partners.map((r,i)=>
               <Route key={i} path={r.path} element={r.requiresAuthentication ? <ProtectedRoute>{r.element}</ProtectedRoute> : <>{r.element}</>} />
             )
           }

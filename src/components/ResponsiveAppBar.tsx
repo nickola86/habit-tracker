@@ -15,7 +15,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import { Link, useNavigate } from "react-router-dom";
-import { routes, externalLinks } from '../config/values';
+import { routes, externalLinks, partners } from '../config/values';
 import { useRecoilValue } from 'recoil';
 import { userState } from '../atoms/userState';
 import { useTranslation } from 'react-i18next';
@@ -87,6 +87,7 @@ function ResponsiveAppBar() {
 
   const appRoutes = routes.filter(r=>r.requiresAuthentication===isUserLoggedIn && r.isHomePage!==true)
   const appLinks = externalLinks.filter(r=>r.requiresAuthentication===isUserLoggedIn)
+  const appPartners = partners.filter(r=>r.requiresAuthentication===isUserLoggedIn)
 
   return (
     <>
@@ -221,7 +222,7 @@ function ResponsiveAppBar() {
               <ListItem disablePadding onClick={()=>handleCloseNavMenuAndGo('/')}>
                 <ListItemButton>
                   <ListItemIcon>
-                    <Home />
+                    <Home color="primary"/>
                   </ListItemIcon>
                   <ListItemText primary={t('Smartworkingvan')} />
                 </ListItemButton>
@@ -245,8 +246,21 @@ function ResponsiveAppBar() {
             </List>
             <Divider/>
             <List>
+            {partners.map((s) => (
+              <ListItem key={s.pageName} disablePadding onClick={()=>handleCloseNavMenuAndGo(s.path)}>
+                <ListItemButton>
+                  <ListItemIcon>
+                    {s.icon}
+                  </ListItemIcon>
+                  <ListItemText primary={t(s.pageName)} />
+                </ListItemButton>
+              </ListItem>
+            ))}
+            </List>
+            <Divider/>
+            <List>
             {externalLinks.map((s) => (
-                <ListItem key={s.pageName} disablePadding onClick={()=>navigateToBlank(s.externalUrl,s.pageName)}>
+              <ListItem key={s.pageName} disablePadding onClick={()=>navigateToBlank(s.externalUrl,s.pageName)}>
                 <ListItemButton>
                   <ListItemIcon>
                     {s.icon}
