@@ -19,6 +19,8 @@ export default function App() {
   const queryClient = new QueryClient()
   const {t,i18n} = useTranslation();
 
+  const externalWithElement = externalLinks.filter(e=>{return !!e.element})
+
   return <QueryClientProvider client={queryClient}>
     <CssBaseline />
     <I18nextProvider i18n={i18n}>
@@ -27,6 +29,11 @@ export default function App() {
         <Routes>
         {
             routes.map((r,i)=>
+              <Route key={i} path={r.path} element={r.requiresAuthentication ? <ProtectedRoute>{r.element}</ProtectedRoute> : <>{r.element}</>} />
+            )
+          }
+          {
+            externalWithElement.map((r,i)=>
               <Route key={i} path={r.path} element={r.requiresAuthentication ? <ProtectedRoute>{r.element}</ProtectedRoute> : <>{r.element}</>} />
             )
           }
