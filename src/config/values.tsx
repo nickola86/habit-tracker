@@ -18,10 +18,10 @@ import Partners from '../views/Partners';
 export const meta: MetaHeadersType = {
   title:'smartworkingvan',
   url:'https://www.smartworkingvan.com',
-  generator: "Smart Working Van, an office on wheels with everything you need to work efficiently and travel!",
+  generator: "Smartworkingvan, an office on wheels with everything you need to work efficiently and travel!",
   image: '/static/images/ciro.jpg',
-  description_it: "Smart Working Van, un ufficio su ruote con tutto ciò che serve per lavorare in modo efficiente viaggiando!",
-  description_en:"Smart Working Van, an office on wheels with everything you need to work efficiently and travel!"
+  description_it: "Smartworkingvan, un ufficio su ruote con tutto ciò che serve per lavorare in modo efficiente viaggiando!",
+  description_en:"Smartworkingvan, an office on wheels with everything you need to work efficiently and travel!"
 }
 
 export const routes = [{
