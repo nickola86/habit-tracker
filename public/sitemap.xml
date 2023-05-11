@@ -1,14 +1,75 @@
-<?xml version="1.0" encoding="UTF-8"?> <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url> <loc>https://www.smartworkingvan.com/</loc> <lastmod>2023-05-11</lastmod> <changefreq>monthly</changefreq> <priority>0.8</priority> </url>
-<url> <loc>https://www.smartworkingvan.com/goboony</loc> <lastmod>2023-05-11</lastmod> <changefreq>monthly</changefreq> <priority>0.8</priority> </url>
-<url> <loc>https://www.smartworkingvan.com/yescapa</loc> <lastmod>2023-05-11</lastmod> <changefreq>monthly</changefreq> <priority>0.8</priority> </url>
-<url> <loc>https://www.smartworkingvan.com/partners</loc> <lastmod>2023-05-11</lastmod> <changefreq>monthly</changefreq> <priority>0.8</priority> </url>
-<url> <loc>https://www.smartworkingvan.com/heater</loc> <lastmod>2023-05-11</lastmod> <changefreq>monthly</changefreq> <priority>0.8</priority> </url>
-<url> <loc>https://www.smartworkingvan.com/fridge</loc> <lastmod>2023-05-11</lastmod> <changefreq>monthly</changefreq> <priority>0.8</priority> </url>
-<url> <loc>https://www.smartworkingvan.com/ac-inverter</loc> <lastmod>2023-05-11</lastmod> <changefreq>monthly</changefreq> <priority>0.8</priority> </url>
-<url> <loc>https://www.smartworkingvan.com/gas</loc> <lastmod>2023-05-11</lastmod> <changefreq>monthly</changefreq> <priority>0.8</priority> </url>
-<url> <loc>https://www.smartworkingvan.com/water-refill</loc> <lastmod>2023-05-11</lastmod> <changefreq>monthly</changefreq> <priority>0.8</priority> </url>
-<url> <loc>https://www.smartworkingvan.com/water-disposal</loc> <lastmod>2023-05-11</lastmod> <changefreq>monthly</changefreq> <priority>0.8</priority> </url>
-<url> <loc>https://www.smartworkingvan.com/toilet-disposal</loc> <lastmod>2023-05-11</lastmod> <changefreq>monthly</changefreq> <priority>0.8</priority> </url>
-<url> <loc>https://www.smartworkingvan.com/control-panel</loc> <lastmod>2023-05-11</lastmod> <changefreq>monthly</changefreq> <priority>0.8</priority> </url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+      <loc>https://www.smartworkingvan.com/</loc>
+      <lastmod>2023-05-11</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://www.smartworkingvan.com/goboony</loc>
+      <lastmod>2023-05-11</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://www.smartworkingvan.com/yescapa</loc>
+      <lastmod>2023-05-11</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://www.smartworkingvan.com/partners</loc>
+      <lastmod>2023-05-11</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://www.smartworkingvan.com/heater</loc>
+      <lastmod>2023-05-11</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://www.smartworkingvan.com/fridge</loc>
+      <lastmod>2023-05-11</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://www.smartworkingvan.com/ac-inverter</loc>
+      <lastmod>2023-05-11</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://www.smartworkingvan.com/gas</loc>
+      <lastmod>2023-05-11</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://www.smartworkingvan.com/water-refill</loc>
+      <lastmod>2023-05-11</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://www.smartworkingvan.com/water-disposal</loc>
+      <lastmod>2023-05-11</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://www.smartworkingvan.com/toilet-disposal</loc>
+      <lastmod>2023-05-11</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://www.smartworkingvan.com/control-panel</loc>
+      <lastmod>2023-05-11</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
 </urlset>
