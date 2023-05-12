@@ -29,17 +29,17 @@ export default function App() {
         <Routes>
         {
             routes.map((r,i)=>
-              <Route key={i} path={r.path} element={r.requiresAuthentication ? <ProtectedRoute>{r.element}</ProtectedRoute> : <>{r.element}</>} />
+              <Route key={i} path={r.path} element={r.isHiddenPage ? <ProtectedRoute>{r.element}</ProtectedRoute> : <>{r.element}</>} />
             )
           }
           {
             externalWithElement.map((r,i)=>
-              <Route key={i} path={r.path} element={r.requiresAuthentication ? <ProtectedRoute>{r.element}</ProtectedRoute> : <>{r.element}</>} />
+              <Route key={i} path={r.path} element={r.isHiddenPage ? <ProtectedRoute>{r.element}</ProtectedRoute> : <>{r.element}</>} />
             )
           }
           {
             partners.map((r,i)=>
-              <Route key={i} path={r.path} element={r.requiresAuthentication ? <ProtectedRoute>{r.element}</ProtectedRoute> : <>{r.element}</>} />
+              <Route key={i} path={r.path} element={r.isHiddenPage ? <ProtectedRoute>{r.element}</ProtectedRoute> : <>{r.element}</>} />
             )
           }
           <Route path="*" element={<Navigate to={'/'} />} />

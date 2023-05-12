@@ -26,7 +26,7 @@ COMPONENTS
 export interface Route{
     pageName: string
     path: string
-    requiresAuthentication: boolean
+    isHiddenPage: boolean
     action?:function,
     icon?:Element
 }

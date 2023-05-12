@@ -85,9 +85,9 @@ function ResponsiveAppBar() {
     i18n.changeLanguage(lang)
   }
 
-  const appRoutes = routes.filter(r=>r.requiresAuthentication===isUserLoggedIn && r.isHomePage!==true)
-  const appLinks = externalLinks.filter(r=>r.requiresAuthentication===isUserLoggedIn)
-  const appPartners = partners.filter(r=>r.requiresAuthentication===isUserLoggedIn)
+  const appRoutes = routes.filter(r=>r.isHiddenPage===isUserLoggedIn && r.isHomePage!==true)
+  const appLinks = externalLinks.filter(r=>r.isHiddenPage===isUserLoggedIn)
+  const appPartners = partners.filter(r=>r.isHiddenPage===isUserLoggedIn)
 
   return (
     <>

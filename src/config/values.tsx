@@ -30,74 +30,74 @@ export const meta: MetaHeadersType = {
 export const routes = [{
   pageName:'Smartworkingvan',
   path:'/',
-  requiresAuthentication: false,
+  isHiddenPage: false,
   element: <Ciro/>,
   icon: <Home color="primary"/>,
   isHomePage: true
 },{
   pageName:'Pannello di controllo',
   path:'/control-panel',
-  requiresAuthentication: true,
+  isHiddenPage: false,
   icon:<Tune sx={{color:'#1976d2'}}/>,
   element: <ControlPanel/>
 },{
   pageName:'Stufa',
   path:'/heater',
-  requiresAuthentication: false,
+  isHiddenPage: false,
   icon:<LocalFireDepartment sx={{color:'#1976d2'}}/>,
   element: <Heater/>
 },{
   pageName:'Frigo',
   path:'/fridge',
-  requiresAuthentication: false,
+  isHiddenPage: false,
   icon:<AcUnit sx={{color:'#1976d2'}}/>,
   element: <Fridge/>
 },{
   pageName:'AC Inverter',
   path:'/ac-inverter',
-  requiresAuthentication: false,
+  isHiddenPage: false,
   icon:<Bolt sx={{color:'#1976d2'}}/>,
   element:<ACInverter/>
 },{
   pageName:'Bagno',
   path:'/toilet',
-  requiresAuthentication: true,
+  isHiddenPage: true,
   icon:<Wc sx={{color:'#1976d2'}}/>,
   element: <Toilet/>
 },{
   pageName:'Doccia',
   path:'/shower',
-  requiresAuthentication: true,
+  isHiddenPage: true,
   icon:<ShowerIcon sx={{color:'#1976d2'}}/>,
   element: <Shower/>
 },{
   pageName:'Gas',
   path:'/gas',
-  requiresAuthentication: false,
+  isHiddenPage: false,
   icon:<PropaneTank sx={{color:'#1976d2'}}/>,
   element: <Gas/>
 },{
   pageName:'Estintore',
   path:'/fire-extinguisher',
-  requiresAuthentication: true,
+  isHiddenPage: true,
   icon:<FireExtinguisherIcon sx={{color:'#1976d2'}}/>,
   element: <FireExtinguisher />
 },{
   pageName:'Carico acqua',
   path:'/water-refill',
-  requiresAuthentication: false,
+  isHiddenPage: false,
   icon:<Water sx={{color:'#1976d2'}}/>,
   element: <WaterRefill/>
 },{
   pageName:'Scarico acqua',
   path:'/water-disposal',
-  requiresAuthentication: false,
+  isHiddenPage: false,
   icon:<OilBarrel sx={{color:'#1976d2'}}/>,
   element: <WaterDisposal/>
 },{
   pageName:'Scarico bagno',
   path:'/toilet-disposal',
-  requiresAuthentication: false,
+  isHiddenPage: false,
   icon:<Downloading sx={{color:'#1976d2'}}/>,
   element: <ToiletDisposal/>
 }]
@@ -105,7 +105,7 @@ export const routes = [{
 export const partners = [{
   pageName:'Partners',
   path:'/partners',
-  requiresAuthentication: false,
+  isHiddenPage: false,
   icon:<Diversity1 color="primary"/>,
   element: <Partners/>
 }]
@@ -115,26 +115,26 @@ export const externalLinks = [
   pageName:'Goboony', 
   path:'/goboony',
   externalUrl: 'https://www.goboony.it/campers/italia/sardegna/iglesias/43288',
-  requiresAuthentication: false,
+  isHiddenPage: false,
   icon: <Image path="/static/images/gb-favicon.png" height='24px' width='24px'/>,
   element: <Goboony />
 },{
   pageName:'Yescapa', 
   path:'/yescapa',
   externalUrl: 'https://www.yescapa.it/camper/62312',
-  requiresAuthentication: false,
+  isHiddenPage: false,
   icon: <Image path="/static/images/yc-favicon.png" height='24px' width='24px'/>,
   element: <Yescapa/>
 },{
   pageName:'Whatsapp',
   path:'/whatsapp',
   externalUrl: 'https://wa.me/+393513531335',
-  requiresAuthentication: false,
+  isHiddenPage: false,
   icon:<WhatsApp sx={{color:'#25D366'}}/>
 },{
   pageName:'Instagram',
   path:'/instagram',
   externalUrl: 'https://www.instagram.com/smartworkingvan/',
-  requiresAuthentication: false,
+  isHiddenPage: false,
   icon: <Image path="/static/images/instagram.png" height='24px' width='24px' square/>
 }]

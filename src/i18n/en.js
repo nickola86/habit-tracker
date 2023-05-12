@@ -112,5 +112,18 @@ export const en = {
         ,"Cerchiamo di fare in modo che \"Ciro\", il nostro camper, sia eco friendly scegliendo accuratamente i prodotti che utilizziamo a bordo affinchè essi abbiano il minor impatto ambientale possibile.":"We try to make \"Ciro\", our camper, eco-friendly by carefully choosing the products we use on board so that they have the least possible environmental impact."
         ,"Jebel Sardinia è la tua guida di fiducia per escursioni e trekking in Sardegna. Scopri con noi i paesaggi di mare e di montagna del Golfo di Orosei, i segreti del Supramonte, i sapori della Barbagia, le sconfinate spiagge della Baronia e molto altro!":"Jebel Sardinia is your trusted guide for excursions and trekking in Sardinia. Discover with us the sea and mountain landscapes of the Gulf of Orosei, the secrets of Supramonte, the flavors of Barbagia, the boundless beaches of Baronia and much more!"
         ,"Vuoi sapere come Vivere da Nomade Digitale? Leggi questa guida per sapere tutto ciò che ti serve per diventare nomade digitale e Vivere Viaggiando!":"Do you want to know how to live as a digital nomad? Read this guide to know everything you need to become a digital nomad and Live Travelling!"
+        ,"Aurora Coworking è uno spazio di coworking situato nella bellissima Sardegna sud-occidentale. Uno spazio ricco di tecnologia in cui accogliamo professionisti locali e nomadi digitali da tutto il mondo.":"Aurora Coworking is a community-driven coworking space situated in the beautiful south-west Sardinia. A technological-rich space for people and thoughts in which we welcome local professionals and digital nomads from allover the world."
+        //Control Panel
+        ,"Dal pannello di controllo è possibile monitorare lo stato dei serbatoi delle acque, la temperatura interna e la carica delle batterie, oltre che accendere e spegnere luci e dispositivi elettrici.":"From the control panel it is possible to monitor the status of the water tanks, the internal temperature and the battery charge, as well as turning on and off lights and electrical devices."
+        ,"Accensione e spegnimento generale":"Main on off swith"
+        ,"Accensione e spegnimento della pompa dell'acqua":"Water pump on off switch"
+        ,"Accensione e spegnimento delle luci interne":"Internal lights on off switch"
+        ,"Accensione e spegnimento della luce esterna":"External light on off switch"
+        ,"Indicatore di tensione della batteria motore in Volt":"Service batteries voltage indicator"
+        ,"Premi due volte per l'indicatore di carica della batteria servizi":"Press twice for service batteries charge indicator"
+        ,"Indicatore di tensione della batteria motore in Volt":"Engine battery voltage indicator"
+        ,"Premi due volte per l'indicatore di carica della batteria motore":"Press twice for engine battery charge indicator"
+        ,"Indicatore del livello di acqua disponibile (0%, 33%, 66%, 100%)":"Water level indicator (0%, 33%, 66%, 100%)"
+        ,"Indicatore di temperatura interna in °C":"Internal temperature °C indicator"        
     }
 }

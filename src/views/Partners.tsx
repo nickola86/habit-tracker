@@ -77,6 +77,26 @@ export default function Partners() {
           </CardActions>
         </Card>
       </Grid>
+      <Grid item xs={12} md={4}>
+        <Card sx={{ maxWidth: 345 }}>
+          <CardMedia
+            sx={{ height: 160 }}
+            image="/static/images/cards/aurora.jpg"
+            title="Aurora Coworking"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Aurora Coworking
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+            <Trans>Aurora Coworking è uno spazio di coworking situato nella bellissima Sardegna sud-occidentale. Uno spazio ricco di tecnologia in cui accogliamo professionisti locali e nomadi digitali da tutto il mondo.</Trans>
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <a href="https://www.auroracoworking.it/" target="_blank"><Button size="small">{t('Scopri di più')}</Button></a>
+          </CardActions>
+        </Card>
+      </Grid>
     </Grid>
   </div>
   );
