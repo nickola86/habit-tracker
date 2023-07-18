@@ -1,26 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react'
+import CssBaseline from '@mui/material/CssBaseline';
+import {routes, externalLinks, partners} from './config/values';
+import { QueryClient, QueryClientProvider } from 'react-query'
+import {
+  Navigate,
+  Route,
+  BrowserRouter as Router,
+  Routes,
+} from "react-router-dom";
+import ResponsiveAppBar from './components/ResponsiveAppBar';
+import ProtectedRoute from "./components/ProtectedRoute";
+import { I18nextProvider, useTranslation } from 'react-i18next';
+import Ciro from './views/Ciro';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default function App() {
+
+  const queryClient = new QueryClient()
+  const {t,i18n} = useTranslation();
+
+  const externalWithElement = externalLinks.filter(e=>{return !!e.element})
+
+  return <QueryClientProvider client={queryClient}>
+    <CssBaseline />
+    <I18nextProvider i18n={i18n}>
+    <Router>
+        <ResponsiveAppBar/>
+        <Routes>
+        {
+            routes.map((r,i)=>
+              <Route key={i} path={r.path} element={r.isHiddenPage ? <ProtectedRoute>{r.element}</ProtectedRoute> : <>{r.element}</>} />
+            )
+          }
+          {
+            externalWithElement.map((r,i)=>
+              <Route key={i} path={r.path} element={r.isHiddenPage ? <ProtectedRoute>{r.element}</ProtectedRoute> : <>{r.element}</>} />
+            )
+          }
+          {
+            partners.map((r,i)=>
+              <Route key={i} path={r.path} element={r.isHiddenPage ? <ProtectedRoute>{r.element}</ProtectedRoute> : <>{r.element}</>} />
+            )
+          }
+          <Route path="*" element={<Navigate to={'/'} />} />
+        </Routes>
+    </Router>
+    </I18nextProvider>
+  </QueryClientProvider>
+
 }
-
-export default App;

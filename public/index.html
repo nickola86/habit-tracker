@@ -1,29 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    
+    <title>smartworkingvan</title>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="generator" content="Smartworkingvan, an office on wheels with everything you need to work efficiently and travel!" />
+    <meta name="description" lang="it" content="Smartworkingvan, un ufficio su ruote con tutto ciò che serve per lavorare in modo efficiente viaggiando!" />
+    <meta name="description" lang="en" content="Smartworkingvan, an office on wheels with everything you need to work efficiently and travel!" />
+
+    <meta property="og:title" content="smartworkingvan" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.smartworkingvan.com/" />
+    <meta property="og:image" content="https://www.smartworkingvan.com/static/images/ciro.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta property="twitter:domain" content="smartworkingvan.com" />
+    <meta property="twitter:url" content="https://www.smartworkingvan.com/"/>
+    <meta name="twitter:title" content="smartworkingvan"/>
+    <meta name="twitter:description" content="Smartworkingvan, an office on wheels with everything you need to work efficiently and travel!" />
+    <meta name="twitter:image" content="https://www.smartworkingvan.com/static/images/ciro.jpg"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" lang="en" content="smartworking, smart, working, van, remoteworking, remote work, smart work, smart working, remote working, smart working van, vanlife, van work, van working, working in van, truma">
+    <meta name="keywords" lang="it" content="smartworking, smart, working, van, lavoro agile, lavoro remoto, lavoro da remoto, lavoro dal camper, lavoro, camper, camperlife, vita in camper, truma">
+    <meta name="robots" content="index, follow">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#c3dff7">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#c3dff7">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#c3dff7" />
     <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
@@ -32,20 +55,155 @@
             rel="stylesheet"
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
-    <title>React App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      body{
+        margin:0;
+        padding:0;
+        border:0;
+        font-family: "IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+        font-weight: 400;
+        color: var(--muidocs-palette-grey-900, #1A2027);
+      }
+      #footer{
+        background: #343A40;
+        text-align: center;
+        z-index: 10;
+        padding: 10px 0 20px 0;
+        color: #f8f9fa;
+    }
+    #footer p.copyright a {
+      color: #6DEAFF;
+      font-weight: 700;
+    }
+    #footer .social {
+      padding-bottom: 32px;
+    }
+    #footer .social a {
+      padding: 0 5px;
+      text-decoration: none;
+      -webkit-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+    }
+    #footer .social a i.fa-brands {
+      font-size: 1.1rem;
+      color: #F5F5F5;
+    }
+    #footer #copyright{
+      white-space: nowrap;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+      background-color: transparent;
+    }
+
+      
+  @keyframes pulsecolor {
+    0% {
+      background-color: #e4f3ff;
+    }
+    50% {
+      background-color: #c3dff7;
+    }
+    100% {
+      background-color: #e4f3ff;
+    }
+  }
+
+  div.pulse {
+    display: inline-block;
+    background-color: #c3dff7;
+    animation-name: pulsecolor;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    width: 100%;
+    margin-top:5rem;
+    }
+
+    .lds-ripple {
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  margin: 40px 0 60px -40px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #fff;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple p{
+  margin-top:80px;
+  text-align: center;
+  font-weight: 600;
+  font-size: xx-large;
+  color: white;
+  text-shadow: 2px 1px 1px rgba(0,0,0,0.3);
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  4.9% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <div id="root">
+      <div class="pulse">
+        <div class="lds-ripple">
+          <div>&nbsp;</div>
+          <p>. . .</p>
+        </div>
+      </div>
+      <footer id="footer" style="position:fixed; bottom:0px; width:100%">
+        <p class="copyright">Made with
+            <i class="fa fa-heart"></i> By
+      <a target="_blank" title="Zeska" href="http://instagram.com/zeska_francesca">Zeska</a> &amp;
+            <a target="_blank" title="Nico" href="http://instagram.com/nicola.di.trani">Nico</a>
+            <span id="copyright">© 2023 all rights reserved</span>
+        </p>
+        <div class="social">
+            <a target="_blank" href="https://instagram.com/smartworkingvan" title="instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+    </footer>
+    </div>
   </body>
 </html>
